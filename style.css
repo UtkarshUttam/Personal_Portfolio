@@ -3,7 +3,7 @@ body{
 }
 .first-section {
     background: linear-gradient(rgba(0, 0, 0, 0.9),
-            rgba(0, 149, 255, 0.4)), url("./a7237d00f85945d0e54029e0fed47112.jpg");
+            rgba(0, 149, 255, 0.4)), url("./media/a7237d00f85945d0e54029e0fed47112.jpg");
     background-size:cover;
     height: 100vh;
 }
