@@ -7,14 +7,23 @@ body{
     background-size:cover;
     height: 100vh;
 }
-
+.user-image{
+    margin: 150px;
+    height: 300px;
+    width: 300px;
+    vertical-align:middle;
+    object-fit:cover;
+    border-radius: 50%;
+    border-width: 100px;
+}
 /* .active {
     background-color: rgb(65, 105, 225);
     border-radius: 10px;
 } */
 
 .hero-title{
-    padding-top: 300px;
+    /* padding-top: 300px; */
+    margin-top: 200px;
     color: royalblue;
     /* color: white; */
 }
@@ -101,3 +110,7 @@ body{
     color:white;
 }
     
+
+.nameArea{
+    display: flex;
+}
