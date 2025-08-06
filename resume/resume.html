@@ -1,226 +1,581 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
-<html>
-
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Utkarsh Uttam - Frontend/Fullstack</title>
-  <meta name="description" content="" />
+  <title>Utkarsh Uttam - Resume | Frontend/Fullstack Developer</title>
+  <meta name="description" content="Professional resume of Utkarsh Uttam - Frontend/Fullstack Developer specializing in React, Python, and modern web technologies" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous" /> -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://kit.fontawesome.com/ecee2da4e2.js" crossorigin="anonymous"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: '#3b82f6',
+            secondary: '#1e40af',
+            accent: '#06b6d4',
+            dark: '#0f172a',
+            'dark-light': '#1e293b',
+          },
+          fontFamily: {
+            'sans': ['Inter', 'system-ui', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="resumeStyle.css" />
-  <!-- <script src="https://kit.fontawesome.com/ecee2da4e2.js" crossorigin="anonymous"></script> -->
 </head>
 
-<body>
-  <nav>
-    <a href="#">Utkarsh Uttam</a>
-    <ul>
-        <li><a href="../index.html#scrollspyHeading1">Home</a></li>
-        <li><a href="../index.html#scrollspyHeading2">About</a></li>
-        <li class="dropdown">
-            <a href="#" class="dropdown-toggle">Portfolio</a>
-            <ul class="dropdown-menu">
-                <li><a href="../index.html#scrollspyHeading3">Skills</a></li>
-                <li><a href="./resume.html">Resume</a></li>
-                <li><a href="../index.html#scrollspyHeading4">Projects</a></li>
-                <li><hr class="dropdown-divider" /></li>
-                <li><a href="../index.html#scrollspyHeading5">Image Gallery</a></li>
-            </ul>
-        </li>
-        <li><a href="../index.html#scrollspyHeading6">Contact</a></li>
-    </ul>
-</nav>
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-200 transition-colors duration-300">
+  <!-- Navigation -->
+  <nav class="fixed top-0 w-full bg-white/90 dark:bg-gray-900/90 backdrop-blur-md shadow-sm z-50 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <div class="flex-shrink-0">
+          <a href="../index.html" class="text-2xl font-bold text-primary hover:text-secondary transition-colors">
+            Utkarsh Uttam
+          </a>
+        </div>
+        
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="../index.html#home" class="text-gray-700 dark:text-gray-300 hover:text-primary transition-colors px-3 py-2 rounded-md text-sm font-medium">Home</a>
+          <a href="../index.html#about" class="text-gray-700 dark:text-gray-300 hover:text-primary transition-colors px-3 py-2 rounded-md text-sm font-medium">About</a>
+          <a href="../index.html#skills" class="text-gray-700 dark:text-gray-300 hover:text-primary transition-colors px-3 py-2 rounded-md text-sm font-medium">Skills</a>
+          <a href="../index.html#projects" class="text-gray-700 dark:text-gray-300 hover:text-primary transition-colors px-3 py-2 rounded-md text-sm font-medium">Projects</a>
+          <a href="../index.html#contact" class="text-gray-700 dark:text-gray-300 hover:text-primary transition-colors px-3 py-2 rounded-md text-sm font-medium">Contact</a>
+          <span class="bg-primary text-white px-4 py-2 rounded-lg text-sm font-medium">Resume</span>
+          
+          <!-- Theme Toggle Button -->
+          <button id="theme-toggle" class="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition-all duration-300" aria-label="Toggle theme">
+            <i id="theme-icon" class="fas fa-moon text-lg"></i>
+          </button>
+        </div>
 
-  <div class="container">
-      
-
-    <div class="section1">
-      <div class="profileArea">
-        <img src="../media/PassportPhoto.png" alt="Placeholder Image"/>
-        <div class="NameArea">
-          Utkarsh Uttam</div>
-      </div>
-      <div class="contact">
-        Registration Number: 21BCE10276<br>
-        Email: utkarshuttam2044@gmail.com<br>
-        Phone: +91 6352412745<br>
-        <a href="https://utkarshuttam.github.io/Personal_Portfolio/">Personal Portfolio</a><br>
-        <a href="https://www.linkedin.com/in/utkarsh-uttam-0884ab1b7/">Linkedin</a><br>
-        <a href="https://github.com/UtkarshUttam">Github</a><br>
-
+        <!-- Mobile menu button -->
+        <div class="md:hidden flex items-center space-x-2">
+          <button id="mobile-theme-toggle" class="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition-all duration-300" aria-label="Toggle theme">
+            <i id="mobile-theme-icon" class="fas fa-moon"></i>
+          </button>
+          <button id="mobile-menu-btn" class="text-gray-700 dark:text-gray-300 hover:text-primary focus:outline-none">
+            <i class="fas fa-bars text-xl"></i>
+          </button>
+        </div>
       </div>
     </div>
 
-    <div class="section2">
-      <br>
-      &nbsp &nbsp &nbsp <strong>Technical Skills:</strong> HTML/CSS, JavaScript, ReactJS, SQL, Figma, Python, C/C++, Flutter
-      <br>
-      &nbsp &nbsp &nbsp <strong>Certification: </strong>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="md:hidden hidden bg-white dark:bg-gray-900 border-t dark:border-gray-700">
+      <div class="px-2 pt-2 pb-3 space-y-1">
+        <a href="../index.html#home" class="block px-3 py-2 text-gray-700 dark:text-gray-300 hover:text-primary transition-colors">Home</a>
+        <a href="../index.html#about" class="block px-3 py-2 text-gray-700 dark:text-gray-300 hover:text-primary transition-colors">About</a>
+        <a href="../index.html#skills" class="block px-3 py-2 text-gray-700 dark:text-gray-300 hover:text-primary transition-colors">Skills</a>
+        <a href="../index.html#projects" class="block px-3 py-2 text-gray-700 dark:text-gray-300 hover:text-primary transition-colors">Projects</a>
+        <a href="../index.html#contact" class="block px-3 py-2 text-gray-700 dark:text-gray-300 hover:text-primary transition-colors">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Resume Content -->
+  <div class="pt-20 pb-12 min-h-screen">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       
-      <ul>
-        <dd><li> <a href="https://www.coursera.org/account/accomplishments/verify/CBDQACM6Q8NM">Applied Machine Learning in Python, Coursera, Jan 23</a></dd></li>
-        <dd><li> <a href="https://www.coursera.org/account/accomplishments/verify/37QR89DX9R6N">React Basics, Coursera, June 23</a></dd></li>
-        <dd><li> <a href="https://www.kaggle.com/learn/certification/utkarsh21bce10276/python">Python, Kaggle, Dec 22</a></dd></li>
-        <dd><li> <a href="https://www.kaggle.com/learn/certification/utkarsh21bce10276/intro-to-sql">Intro to SQL, Kaggle, Feb</a></dd></li>
-      </ul>
+      <!-- Print/Download Actions -->
+      <div class="flex justify-end mb-6 print:hidden">
+        <button onclick="window.print()" class="bg-primary hover:bg-secondary text-white px-6 py-2 rounded-lg font-medium transition-colors mr-3">
+          <i class="fas fa-print mr-2"></i>Print Resume
+        </button>
+        <a href="../index.html" class="bg-gray-600 hover:bg-gray-700 text-white px-6 py-2 rounded-lg font-medium transition-colors">
+          <i class="fas fa-arrow-left mr-2"></i>Back to Portfolio
+        </a>
+      </div>
 
-    </div>
+      <!-- Resume Container -->
+      <div class="bg-white dark:bg-gray-800 shadow-2xl rounded-lg overflow-hidden">
+        
+        <!-- Header Section -->
+        <div class="bg-gradient-to-r from-primary to-secondary text-white p-8">
+          <div class="flex flex-col md:flex-row items-center md:items-start gap-6">
+            <div class="flex-shrink-0">
+              <img src="../media/square.jpg" alt="Utkarsh Uttam" class="w-32 h-32 rounded-full border-4 border-white shadow-lg object-cover">
+            </div>
+            <div class="text-center md:text-left flex-grow">
+              <h1 class="text-4xl font-bold mb-2">Utkarsh Uttam</h1>
+              <h2 class="text-xl font-light mb-4 opacity-90">Frontend/Fullstack Developer</h2>
+              <p class="text-sm opacity-80 max-w-2xl">
+                Passionate Computer Science student specializing in modern web technologies, with expertise in React, Python, and full-stack development. Committed to creating innovative solutions and exceptional user experiences.
+              </p>
+            </div>
+          </div>
+        </div>
 
-    <div class="section3">
-      <table>
-        <tr>
-          <th colspan="4" style="text-align: left;">EDUCATION</th>
-        </tr>
-        
-        <tr>
-          <th>Board</th>
-          <th>Tenure</th>
-          <th>Educational Institution</th>
-          <th>CGPA/Percentage</th>
-        </tr>
-        <tr>
-          <td>B.Tech (CSE)</td>
-          <td>Jun 21 - Ongoing </td>
-          <td>VIT Bhopal University, Sehore, Bhopal</td>
-          <td>8.61/10</td>
-        </tr>
-        <tr>
-          <td>Class XII</td>
-          <td>2021</td>
-          <td>Kendriya Vidyalaya No.3 AFS Makarpura, Vadodara</td>
-          <td>64.6%</td>
-        </tr>
-        <tr>
-          <td>Class X</td>
-          <td>2018</td>
-          <td>Kendriya Vidyalaya No.3 AFS Makarpura, Vadodara</td>
-          <td>80.4%</td>
-        </tr>
-      </table>
-    </div>
+        <!-- Contact Information -->
+        <div class="bg-gray-50 dark:bg-gray-700 px-8 py-6">
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 text-sm">
+            <div class="flex items-center">
+              <i class="fas fa-envelope text-primary mr-3"></i>
+              <a href="mailto:utkarshuttam2044@gmail.com" class="hover:text-primary transition-colors">utkarshuttam2044@gmail.com</a>
+            </div>
+            <div class="flex items-center">
+              <i class="fas fa-phone text-primary mr-3"></i>
+              <span>+91 6352-412-745</span>
+            </div>
+            <div class="flex items-center">
+              <i class="fab fa-linkedin text-primary mr-3"></i>
+              <a href="https://www.linkedin.com/in/utkarsh-uttam-0884ab1b7/" target="_blank" class="hover:text-primary transition-colors">LinkedIn Profile</a>
+            </div>
+            <div class="flex items-center">
+              <i class="fab fa-github text-primary mr-3"></i>
+              <a href="https://github.com/UtkarshUttam" target="_blank" class="hover:text-primary transition-colors">GitHub Profile</a>
+            </div>
+          </div>
+          <div class="mt-4 text-center">
+            <div class="flex items-center justify-center">
+              <i class="fas fa-id-card text-primary mr-3"></i>
+              <span class="text-sm">Registration Number: 21BCE10276</span>
+            </div>
+          </div>
+        </div>
 
-    <div class="section4">
-      <table class="projectTable">
-        <tr>
-          <th colspan="2" style="text-align: left;">ACADEMIC PROJECTS</th>
-        </tr>
+        <div class="p-8">
+          
+          <!-- Technical Skills Section -->
+          <section class="mb-8">
+            <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4 flex items-center">
+              <i class="fas fa-code text-primary mr-3"></i>
+              Technical Skills
+            </h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div class="bg-gray-50 dark:bg-gray-700 p-4 rounded-lg">
+                <h4 class="font-semibold text-primary mb-3">Frontend</h4>
+                <div class="flex flex-wrap gap-2">
+                  <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs rounded-full">HTML5</span>
+                  <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs rounded-full">CSS3</span>
+                  <span class="px-3 py-1 bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200 text-xs rounded-full">JavaScript</span>
+                  <span class="px-3 py-1 bg-cyan-100 dark:bg-cyan-900 text-cyan-800 dark:text-cyan-200 text-xs rounded-full">React</span>
+                </div>
+              </div>
+              <div class="bg-gray-50 dark:bg-gray-700 p-4 rounded-lg">
+                <h4 class="font-semibold text-primary mb-3">Backend & Database</h4>
+                <div class="flex flex-wrap gap-2">
+                  <span class="px-3 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 text-xs rounded-full">Python</span>
+                  <span class="px-3 py-1 bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200 text-xs rounded-full">Java</span>
+                  <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs rounded-full">MySQL</span>
+                  <span class="px-3 py-1 bg-gray-100 dark:bg-gray-600 text-gray-800 dark:text-gray-200 text-xs rounded-full">C/C++</span>
+                </div>
+              </div>
+              <div class="bg-gray-50 dark:bg-gray-700 p-4 rounded-lg">
+                <h4 class="font-semibold text-primary mb-3">Tools & Testing</h4>
+                <div class="flex flex-wrap gap-2">
+                  <span class="px-3 py-1 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 text-xs rounded-full">Figma</span>
+                  <span class="px-3 py-1 bg-orange-100 dark:bg-orange-900 text-orange-800 dark:text-orange-200 text-xs rounded-full">Git</span>
+                  <span class="px-3 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 text-xs rounded-full">Selenium</span>
+                  <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs rounded-full">Postman</span>
+                </div>
+              </div>
+            </div>
+          </section>
 
-        <tr>
-          <th>Full Stack</th>
-          <td><ul>
-            <li><strong>Devhack</strong>(OCT 2022 - JAN 2023)</li>
-            <dd>
-              <li style="list-style-type: none;">Description:Desktop application(cross-platform) for Hackathons and Internship</li>
-              <li style="list-style-type: none;">Technology: Python, QT Framework, MySQL</li>
-              <li style="list-style-type: none;">Team Project: 4 members</li>
-              <li style="list-style-type: none;">Role: Front End & Back End Developer</li>
-              <li style="list-style-type: none;">Link: <a href="https://github.com/UtkarshUttam/DevHack">DevHack</a></li>
-            </dd></ul></td>
-        </tr>
-        <tr>
-          <th>Full Stack</th>
-          <td><ul>
-            <li><strong>Oceania Hostel website </strong>(2022)</li>
-            <dd>
-              <li style="list-style-type: none;">Description: Website for Hostel activities management like allotments.</li>
-              <li style="list-style-type: none;">Technology: HTML,CSS,JavaScript,PHP,MySQL</li>
-              <li style="list-style-type: none;">Team Project: 4 members</li>
-              <li style="list-style-type: none;">Role: Full Stack development</li>
-              <li style="list-style-type: none;">Link: <a href="https://github.com/UtkarshUttam/Responsive Hostel Website">Responsive_Hostel_Website</a></li>
-            </dd></ul></td>
-        </tr>
-        
-        
-        
-        
-      </table>
-    </div>
+          <!-- Education Section -->
+          <section class="mb-8">
+            <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4 flex items-center">
+              <i class="fas fa-graduation-cap text-primary mr-3"></i>
+              Education
+            </h3>
+            <div class="space-y-4">
+              <div class="border-l-4 border-primary pl-6 pb-4">
+                <div class="flex flex-col md:flex-row md:items-center md:justify-between">
+                  <div>
+                    <h4 class="text-lg font-semibold text-gray-900 dark:text-white">Bachelor of Technology - Computer Science Engineering</h4>
+                    <p class="text-primary font-medium">Vellore Institute of Technology, Bhopal</p>
+                    <p class="text-gray-600 dark:text-gray-400 text-sm">Sehore, Bhopal, Madhya Pradesh</p>
+                  </div>
+                  <div class="text-right mt-2 md:mt-0">
+                    <p class="text-sm text-gray-500 dark:text-gray-400">June 2021 - May 2025 (Completed)</p>
+                    <p class="font-semibold text-primary">CGPA: 8.74/10</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="border-l-4 border-gray-300 pl-6 pb-4">
+                <div class="flex flex-col md:flex-row md:items-center md:justify-between">
+                  <div>
+                    <h4 class="text-lg font-semibold text-gray-900 dark:text-white">Senior Secondary (Class XII)</h4>
+                    <p class="text-gray-700 dark:text-gray-300 font-medium">Kendriya Vidyalaya No.3, AFS Makarpura</p>
+                    <p class="text-gray-600 dark:text-gray-400 text-sm">Vadodara, Gujarat - CBSE Board</p>
+                  </div>
+                  <div class="text-right mt-2 md:mt-0">
+                    <p class="text-sm text-gray-500 dark:text-gray-400">2021</p>
+                    <p class="font-semibold text-gray-700 dark:text-gray-300">64.6%</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="border-l-4 border-gray-300 pl-6">
+                <div class="flex flex-col md:flex-row md:items-center md:justify-between">
+                  <div>
+                    <h4 class="text-lg font-semibold text-gray-900 dark:text-white">Secondary (Class X)</h4>
+                    <p class="text-gray-700 dark:text-gray-300 font-medium">Kendriya Vidyalaya No.3, AFS Makarpura</p>
+                    <p class="text-gray-600 dark:text-gray-400 text-sm">Vadodara, Gujarat - CBSE Board</p>
+                  </div>
+                  <div class="text-right mt-2 md:mt-0">
+                    <p class="text-sm text-gray-500 dark:text-gray-400">2018</p>
+                    <p class="font-semibold text-gray-700 dark:text-gray-300">80.4%</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
 
-    <div class="section5">
-      <table class="expTable">
-        <tr>
-          <th colspan="2" style="text-align: left;">EXPERIENCE</th>
-        </tr>        
-        
-        <tr>
-          <td>KAVACH OS,<br>
-             SECURE, VIT
-             BHOPAL</td>
-          <td><ul>
-            <li><strong>KAVACH OS Python and Bash Team</strong>(2021)</li>
-            <dd>
-              <li style="list-style-type: none;">Description:Developed desktop applications using QT and Python for KAVACH OS, including Edu App,
-                Help App, and Welcome App. Collaborated with a team of developers to ensure timely and accurate
-                completion of project milestones.</li>
-              <li style="list-style-type: none;">Technology: QT, Python</li>
-              <li style="list-style-type: none;">Link: <a href="https://project-k-official.github.io/">Kavach Docs</a></li>
-            </dd></ul></td>
-        </tr>
-        
-      </table>
-    </div>
-    <div class="section6">
-      <table class="expTable">
-        <tr>
-          <th colspan="2" style="text-align: left;">CO-CURRICULARS</th>
-        </tr>        
-        
-        <tr>
-          <td>Coding</td>
-          <td><ul><li>Hackerrank 4 Star in CPP, Python. Leetcode – Global Rank - 11310</li></ul></td>
-        </tr>
-        
-      </table>
-    </div>
-    <div class="section7">
-      <table class="expTable">
-        <tr>
-          <th colspan="2" style="text-align: left;">EXTRA-CURRICULARS AND ACHIEVEMENTS</th>
-        </tr>        
-        
-        <tr>
-          <td>Achievements</td>
-          <td><ul><li>First position at 6th INAE-SERB-GITAM Youth Conclave.</li></ul></td>
-        </tr>
-        <tr>
-          <td>Responsibilities</td>
-          <td><ul><li>Core Member, Tech Team, Igniters Club.</li></ul></td>
-        </tr>
-        <tr>
-          <td>Extracurricular</td>
-          <td><ul><li>Completed National Adventure Institute Training course (The Bharat Scouts and Guides).</li></ul></td>
-        </tr>
-        
-      </table>
-    </div>
-    <div class="section8">
-      <table class="expTable">
-        <tr>
-          <th colspan="2" style="text-align: left;">ADDITIONAL INFORMATION</th>
-        </tr>        
-        
-        <tr>
-          <td>Hobbies</td>
-          <td><ul><li>Aviation - Passionate about aircraft spottings, love observing takeoffs and landings.</li>
-                  <li>Photography – Love capturing nature and aviation through my frame of idea.</li>
-                  <li>Music - Passionate musician, skilled in Harmonica, Harmonium, Casio, and Drums.</li>
-          </ul></td>
-        </tr>
-        <tr>
-          <td>Languages</td>
-          <td><ul><li>English, Hindi</li></ul></td>
-        </tr>
-      </table>
+          <!-- Experience Section -->
+          <section class="mb-8">
+            <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4 flex items-center">
+              <i class="fas fa-briefcase text-primary mr-3"></i>
+              Experience
+            </h3>
+            <div class="space-y-6">
+              <!-- Cognizant Internship -->
+              <div class="bg-gray-50 dark:bg-gray-700 p-6 rounded-lg">
+                <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-3">
+                  <div>
+                    <h4 class="text-lg font-semibold text-gray-900 dark:text-white">QEA Intern</h4>
+                    <p class="text-primary font-medium">Cognizant Technology Solutions</p>
+                    <p class="text-gray-600 dark:text-gray-400 text-sm">Quality Engineering & Assurance Domain</p>
+                  </div>
+                  <span class="text-sm text-gray-500 dark:text-gray-400 mt-1 md:mt-0">May 2025 - Present</span>
+                </div>
+                <p class="text-gray-600 dark:text-gray-300 mb-3">
+                  Worked as a Quality Engineering & Assurance intern, focusing on automated testing frameworks, API testing, and quality assurance processes. Gained hands-on experience with industry-standard testing tools and methodologies while contributing to enterprise-level software quality initiatives.
+                </p>
+                <div class="flex flex-wrap gap-2 mb-3">
+                  <span class="px-3 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 text-xs rounded-full">Selenium</span>
+                  <span class="px-3 py-1 bg-orange-100 dark:bg-orange-900 text-orange-800 dark:text-orange-200 text-xs rounded-full">Postman</span>
+                  <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs rounded-full">Rest Assured</span>
+                  <span class="px-3 py-1 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 text-xs rounded-full">Test Automation</span>
+                  <span class="px-3 py-1 bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200 text-xs rounded-full">Java</span>
+                </div>
+              </div>
+
+              <!-- OShin OS Experience -->
+              <div class="bg-gray-50 dark:bg-gray-700 p-6 rounded-lg">
+                <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-3">
+                  <div>
+                    <h4 class="text-lg font-semibold text-gray-900 dark:text-white">Python & Bash Developer</h4>
+                    <p class="text-primary font-medium">OShin OS - SECURE, VIT Bhopal</p>
+                  </div>
+                  <span class="text-sm text-gray-500 dark:text-gray-400 mt-1 md:mt-0">2021</span>
+                </div>
+                <p class="text-gray-600 dark:text-gray-300 mb-3">
+                  Developed desktop applications using Qt and Python for OShin OS, including Educational App, Help App, and Welcome App. Collaborated with a team of developers to ensure timely and accurate completion of project milestones.
+                </p>
+                <div class="flex flex-wrap gap-2 mb-3">
+                  <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs rounded-full">Python</span>
+                  <span class="px-3 py-1 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 text-xs rounded-full">Qt Framework</span>
+                  <span class="px-3 py-1 bg-gray-100 dark:bg-gray-600 text-gray-800 dark:text-gray-200 text-xs rounded-full">Bash</span>
+                </div>
+                <a href="https://github.com/Oshin-OS-Official" target="_blank" class="text-primary hover:text-secondary transition-colors text-sm">
+                  <i class="fas fa-external-link-alt mr-1"></i>View Project Documentation
+                </a>
+              </div>
+            </div>
+          </section>
+
+          <!-- Projects Section -->
+          <section class="mb-8">
+            <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4 flex items-center">
+              <i class="fas fa-project-diagram text-primary mr-3"></i>
+              Academic Projects
+            </h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              
+              <!-- Project 1 -->
+              <div class="bg-gray-50 dark:bg-gray-700 p-6 rounded-lg">
+                <h4 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">DevHack</h4>
+                <p class="text-sm text-gray-500 dark:text-gray-400 mb-3">October 2022 - January 2023</p>
+                <p class="text-gray-600 dark:text-gray-300 mb-3">
+                  Cross-platform desktop application for hackathons and internship management with comprehensive features for event organization and participant management.
+                </p>
+                <div class="flex flex-wrap gap-2 mb-3">
+                  <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs rounded">Python</span>
+                  <span class="px-2 py-1 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 text-xs rounded">Qt Framework</span>
+                  <span class="px-2 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 text-xs rounded">MySQL</span>
+                </div>
+                <div class="flex items-center justify-between">
+                  <span class="text-sm text-gray-500 dark:text-gray-400">Team: 4 members | Role: Full Stack Developer</span>
+                  <a href="https://github.com/UtkarshUttam/DevHack" target="_blank" class="text-primary hover:text-secondary transition-colors">
+                    <i class="fab fa-github mr-1"></i>GitHub
+                  </a>
+                </div>
+              </div>
+
+              <!-- Project 2 -->
+              <div class="bg-gray-50 dark:bg-gray-700 p-6 rounded-lg">
+                <h4 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">Responsive Hostel Website</h4>
+                <p class="text-sm text-gray-500 dark:text-gray-400 mb-3">2022</p>
+                <p class="text-gray-600 dark:text-gray-300 mb-3">
+                  Comprehensive website for hostel activities management including room allotments, student registration, and administrative features with responsive design.
+                </p>
+                <div class="flex flex-wrap gap-2 mb-3">
+                  <span class="px-2 py-1 bg-orange-100 dark:bg-orange-900 text-orange-800 dark:text-orange-200 text-xs rounded">HTML5</span>
+                  <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs rounded">CSS3</span>
+                  <span class="px-2 py-1 bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200 text-xs rounded">JavaScript</span>
+                  <span class="px-2 py-1 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 text-xs rounded">PHP</span>
+                  <span class="px-2 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 text-xs rounded">MySQL</span>
+                </div>
+                <div class="flex items-center justify-between">
+                  <span class="text-sm text-gray-500 dark:text-gray-400">Team: 4 members | Role: Full Stack Developer</span>
+                  <a href="https://github.com/UtkarshUttam/Responsive_Hostel_Website" target="_blank" class="text-primary hover:text-secondary transition-colors">
+                    <i class="fab fa-github mr-1"></i>GitHub
+                  </a>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Certifications Section -->
+          <section class="mb-8">
+            <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4 flex items-center">
+              <i class="fas fa-certificate text-primary mr-3"></i>
+              Certifications
+            </h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div class="flex items-center p-4 bg-gray-50 dark:bg-gray-700 rounded-lg">
+                <i class="fas fa-robot text-primary mr-3 text-xl"></i>
+                <div>
+                  <h4 class="font-semibold text-gray-900 dark:text-white">Applied Machine Learning in Python</h4>
+                  <p class="text-sm text-gray-600 dark:text-gray-400">Coursera • January 2023</p>
+                  <a href="https://www.coursera.org/account/accomplishments/verify/CBDQACM6Q8NM" target="_blank" class="text-primary text-xs hover:text-secondary transition-colors">View Certificate</a>
+                </div>
+              </div>
+              
+              <div class="flex items-center p-4 bg-gray-50 dark:bg-gray-700 rounded-lg">
+                <i class="fab fa-react text-primary mr-3 text-xl"></i>
+                <div>
+                  <h4 class="font-semibold text-gray-900 dark:text-white">React Basics</h4>
+                  <p class="text-sm text-gray-600 dark:text-gray-400">Coursera • June 2023</p>
+                  <a href="https://www.coursera.org/account/accomplishments/verify/37QR89DX9R6N" target="_blank" class="text-primary text-xs hover:text-secondary transition-colors">View Certificate</a>
+                </div>
+              </div>
+              
+              <div class="flex items-center p-4 bg-gray-50 dark:bg-gray-700 rounded-lg">
+                <i class="fab fa-python text-primary mr-3 text-xl"></i>
+                <div>
+                  <h4 class="font-semibold text-gray-900 dark:text-white">Python Programming</h4>
+                  <p class="text-sm text-gray-600 dark:text-gray-400">Kaggle • December 2022</p>
+                  <a href="https://www.kaggle.com/learn/certification/utkarsh21bce10276/python" target="_blank" class="text-primary text-xs hover:text-secondary transition-colors">View Certificate</a>
+                </div>
+              </div>
+              
+              <div class="flex items-center p-4 bg-gray-50 dark:bg-gray-700 rounded-lg">
+                <i class="fas fa-database text-primary mr-3 text-xl"></i>
+                <div>
+                  <h4 class="font-semibold text-gray-900 dark:text-white">Intro to SQL</h4>
+                  <p class="text-sm text-gray-600 dark:text-gray-400">Kaggle • February 2023</p>
+                  <a href="https://www.kaggle.com/learn/certification/utkarsh21bce10276/intro-to-sql" target="_blank" class="text-primary text-xs hover:text-secondary transition-colors">View Certificate</a>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Achievements & Activities Section -->
+          <section class="mb-8">
+            <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4 flex items-center">
+              <i class="fas fa-trophy text-primary mr-3"></i>
+              Achievements & Activities
+            </h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              
+              <!-- Achievements -->
+              <div class="bg-gray-50 dark:bg-gray-700 p-6 rounded-lg">
+                <h4 class="font-semibold text-primary mb-3 flex items-center">
+                  <i class="fas fa-award mr-2"></i>Achievements
+                </h4>
+                <ul class="space-y-2 text-gray-600 dark:text-gray-300">
+                  <li class="flex items-start">
+                    <i class="fas fa-medal text-yellow-500 mr-2 mt-1 text-sm"></i>
+                    <span>First position at 6th INAE-SERB-GITAM Youth Conclave</span>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fas fa-code text-green-500 mr-2 mt-1 text-sm"></i>
+                    <span>HackerRank 4 Star in C++ and Python</span>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fas fa-chart-line text-blue-500 mr-2 mt-1 text-sm"></i>
+                    <span>LeetCode Global Rank: 11,310</span>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Leadership & Responsibilities -->
+              <div class="bg-gray-50 dark:bg-gray-700 p-6 rounded-lg">
+                <h4 class="font-semibold text-primary mb-3 flex items-center">
+                  <i class="fas fa-users mr-2"></i>Leadership & Responsibilities
+                </h4>
+                <ul class="space-y-2 text-gray-600 dark:text-gray-300">
+                  <li class="flex items-start">
+                    <i class="fas fa-user-tie text-purple-500 mr-2 mt-1 text-sm"></i>
+                    <span>Core Member, Tech Team - Igniters Club</span>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fas fa-mountain text-green-500 mr-2 mt-1 text-sm"></i>
+                    <span>National Adventure Institute Training (Bharat Scouts and Guides)</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <!-- Interests & Languages -->
+          <section>
+            <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4 flex items-center">
+              <i class="fas fa-heart text-primary mr-3"></i>
+              Interests & Languages
+            </h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              
+              <!-- Interests -->
+              <div class="bg-gray-50 dark:bg-gray-700 p-6 rounded-lg">
+                <h4 class="font-semibold text-primary mb-3">Interests & Hobbies</h4>
+                <div class="space-y-3">
+                  <div class="flex items-start">
+                    <i class="fas fa-plane text-blue-500 mr-3 mt-1"></i>
+                    <div>
+                      <p class="font-medium text-gray-900 dark:text-white">Aviation</p>
+                      <p class="text-sm text-gray-600 dark:text-gray-400">Aircraft spotting, observing takeoffs and landings</p>
+                    </div>
+                  </div>
+                  <div class="flex items-start">
+                    <i class="fas fa-camera text-green-500 mr-3 mt-1"></i>
+                    <div>
+                      <p class="font-medium text-gray-900 dark:text-white">Photography</p>
+                      <p class="text-sm text-gray-600 dark:text-gray-400">Capturing nature and aviation moments</p>
+                    </div>
+                  </div>
+                  <div class="flex items-start">
+                    <i class="fas fa-music text-purple-500 mr-3 mt-1"></i>
+                    <div>
+                      <p class="font-medium text-gray-900 dark:text-white">Music</p>
+                      <p class="text-sm text-gray-600 dark:text-gray-400">Harmonica, Harmonium, Casio, and Drums</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Languages -->
+              <div class="bg-gray-50 dark:bg-gray-700 p-6 rounded-lg">
+                <h4 class="font-semibold text-primary mb-3">Languages</h4>
+                <div class="space-y-3">
+                  <div class="flex items-center justify-between">
+                    <span class="text-gray-900 dark:text-white">English</span>
+                    <div class="flex space-x-1">
+                      <div class="w-3 h-3 bg-primary rounded-full"></div>
+                      <div class="w-3 h-3 bg-primary rounded-full"></div>
+                      <div class="w-3 h-3 bg-primary rounded-full"></div>
+                      <div class="w-3 h-3 bg-primary rounded-full"></div>
+                      <div class="w-3 h-3 bg-primary rounded-full"></div>
+                    </div>
+                  </div>
+                  <div class="flex items-center justify-between">
+                    <span class="text-gray-900 dark:text-white">Hindi</span>
+                    <div class="flex space-x-1">
+                      <div class="w-3 h-3 bg-primary rounded-full"></div>
+                      <div class="w-3 h-3 bg-primary rounded-full"></div>
+                      <div class="w-3 h-3 bg-primary rounded-full"></div>
+                      <div class="w-3 h-3 bg-primary rounded-full"></div>
+                      <div class="w-3 h-3 bg-primary rounded-full"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+        </div>
+      </div>
     </div>
   </div>
-  <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
-    crossorigin="anonymous"></script> -->
+  <script>
+    // Theme toggle functionality
+    function initTheme() {
+      const savedTheme = localStorage.getItem('theme');
+      const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      
+      if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark)) {
+        document.documentElement.classList.add('dark');
+        updateThemeIcons('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+        updateThemeIcons('light');
+      }
+    }
+
+    function updateThemeIcons(theme) {
+      const themeIcon = document.getElementById('theme-icon');
+      const mobileThemeIcon = document.getElementById('mobile-theme-icon');
+      
+      if (theme === 'dark') {
+        themeIcon.className = 'fas fa-sun text-lg';
+        mobileThemeIcon.className = 'fas fa-sun';
+      } else {
+        themeIcon.className = 'fas fa-moon text-lg';
+        mobileThemeIcon.className = 'fas fa-moon';
+      }
+    }
+
+    function toggleTheme() {
+      const isDark = document.documentElement.classList.contains('dark');
+      
+      if (isDark) {
+        document.documentElement.classList.remove('dark');
+        localStorage.setItem('theme', 'light');
+        updateThemeIcons('light');
+      } else {
+        document.documentElement.classList.add('dark');
+        localStorage.setItem('theme', 'dark');
+        updateThemeIcons('dark');
+      }
+    }
+
+    // Mobile menu functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      // Initialize theme
+      initTheme();
+      
+      // Theme toggle event listeners
+      const themeToggle = document.getElementById('theme-toggle');
+      const mobileThemeToggle = document.getElementById('mobile-theme-toggle');
+      
+      if (themeToggle) {
+        themeToggle.addEventListener('click', toggleTheme);
+      }
+      
+      if (mobileThemeToggle) {
+        mobileThemeToggle.addEventListener('click', toggleTheme);
+      }
+      
+      // Mobile menu functionality
+      const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+      
+      if (mobileMenuBtn && mobileMenu) {
+        mobileMenuBtn.addEventListener('click', function() {
+          mobileMenu.classList.toggle('hidden');
+        });
+      }
+      
+      // Close mobile menu when clicking on a link
+      const mobileLinks = mobileMenu?.querySelectorAll('a');
+      mobileLinks?.forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.add('hidden');
+        });
+      });
+    });
+  </script>
   </body>
 </html>

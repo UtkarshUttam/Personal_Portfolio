@@ -1,460 +1,1397 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
-<html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Utkarsh Uttam - Frontend/Fullstack Developer</title>
+    <meta
+      name="description"
+      content="Portfolio of Utkarsh Uttam - Frontend/Fullstack Developer specializing in React, Python, and modern web technologies"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script
+      src="https://kit.fontawesome.com/ecee2da4e2.js"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              primary: "#3b82f6",
+              secondary: "#1e40af",
+              accent: "#06b6d4",
+              dark: "#0f172a",
+              "dark-light": "#1e293b",
+            },
+            animation: {
+              "fade-in": "fadeIn 0.6s ease-in-out",
+              "slide-up": "slideUp 0.8s ease-out",
+              float: "float 3s ease-in-out infinite",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+      @keyframes slideUp {
+        from {
+          transform: translateY(30px);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+      }
+    </style>
+  </head>
 
-<head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Utkarsh Uttam - Frontend/Fullstack</title>
-  <meta name="description" content="" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous" />
-  <link rel="stylesheet" href="style.css" />
-  <script src="https://kit.fontawesome.com/ecee2da4e2.js" crossorigin="anonymous"></script>
-</head>
+  <body class="bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-200 transition-colors duration-300">
+    <!-- Navigation -->
+    <nav
+      class="fixed top-0 w-full bg-white/90 dark:bg-gray-900/90 backdrop-blur-md shadow-sm z-50 transition-all duration-300"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+          <div class="flex-shrink-0">
+            <a
+              href="#home"
+              class="text-2xl font-bold text-primary hover:text-secondary transition-colors"
+            >
+              Utkarsh Uttam
+            </a>
+          </div>
 
-<body>
-  <nav id="navbar-example2" class="navbar bg-dark sticky-top bg-body-tertiary px-3" data-bs-theme="dark">
-    <a class="navbar-brand" href="#">Utkarsh Uttam</a>
-    <ul class="nav nav-pills">
-      <li class="nav-item">
-        <a class="nav-link" href="#scrollspyHeading1">Home</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#scrollspyHeading2">About</a>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
-          aria-expanded="false">Portfolio</a>
-        <ul class="dropdown-menu">
-          <li>
-            <a class="dropdown-item" href="#scrollspyHeading3">Skills</a>
-          </li>
-          <li>
-            <a class="dropdown-item" href="./resume/resume.html">Resume</a>
-          </li>
-          <li>
-            <a class="dropdown-item" href="#scrollspyHeading4">Projects</a>
-          </li>
-          <li>
-            <hr class="dropdown-divider" />
-          </li>
-          <li>
-            <a class="dropdown-item" href="#scrollspyHeading5">Image Gallery</a>
-          </li>
-        </ul>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#scrollspyHeading6">Contact</a>
-      </li>
-    </ul>
-  </nav>
-  <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-root-margin="0px 0px -40%"
-    data-bs-smooth-scroll="true" class="scrollspy-example bg-body-tertiary rounded-2" tabindex="0">
-    <section id="scrollspyHeading1" class="first-section">
-      <div class="container-fluid nameArea">
-        <img class="user-image img-fluid float start" src="./media/square.jpg" alt="Utkarsh">
-        <div>
-        <h1 class="display-1 hero-title text-center fw-bold">Utkarsh Uttam</h1>
+          <!-- Desktop Menu -->
+          <div class="hidden md:block">
+            <div class="ml-10 flex items-baseline space-x-8">
+              <a
+                href="#home"
+                class="nav-link text-gray-700 dark:text-gray-300 hover:text-primary transition-colors px-3 py-2 rounded-md text-sm font-medium"
+                >Home</a
+              >
+              <a
+                href="#about"
+                class="nav-link text-gray-700 dark:text-gray-300 hover:text-primary transition-colors px-3 py-2 rounded-md text-sm font-medium"
+                >About</a
+              >
+              <a
+                href="#skills"
+                class="nav-link text-gray-700 dark:text-gray-300 hover:text-primary transition-colors px-3 py-2 rounded-md text-sm font-medium"
+                >Skills</a
+              >
+              <a
+                href="#projects"
+                class="nav-link text-gray-700 dark:text-gray-300 hover:text-primary transition-colors px-3 py-2 rounded-md text-sm font-medium"
+                >Projects</a
+              >
+              <a
+                href="#gallery"
+                class="nav-link text-gray-700 dark:text-gray-300 hover:text-primary transition-colors px-3 py-2 rounded-md text-sm font-medium"
+                >Gallery</a
+              >
 
-        <h2 class="text-center " style="color: white;"> I am a</h2>
-        <h3 class="text-center " style="color: white;">Developer | Designer | Amatuer Photographer | Aviation lover | Musical minded</h3>
-      </div>
-      </div>
-    </section>
+              <a
+                href="./resume/resume.html"
+                class="bg-primary text-white px-4 py-2 rounded-lg hover:bg-secondary transition-colors"
+                >Resume</a
+              >
+              
+              <!-- Theme Toggle Button -->
+              <button
+                id="theme-toggle"
+                class="ml-4 p-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition-all duration-300"
+                aria-label="Toggle theme"
+              >
+                <i id="theme-icon" class="fas fa-moon text-lg"></i>
+              </button>
+            </div>
+          </div>
 
-    <section id="scrollspyHeading2" class="second-section">
-      <h2 class="headings text-center" style="color: white;">About me</h2>
-      <div class="container">
-        <p class="lead">
-          Hello and welcome to my portfolio website! My name is Utkarsh Uttam, and I am a B.Tech
-          student at Vellore Institute of Technology, Bhopal.
-
-          My passion for programming and technology started at a young age, and I have been exploring different
-          languages and tools ever since. I have experience in HTML, CSS (including Bootstrap), PHP, JavaScript, Python,
-          C/C++, and MySQL, as well as developing desktop applications using Python in KAVACH OS.
-
-          Throughout my academic and professional journey, I have completed several projects that have allowed me to
-          apply my skills and creativity. These include a landing page for defence knowledge, a simple banking GUI using
-          Python's tkinter library, a note-sharing platform for VIT students, a responsive hostel website for managing
-          hostel activities, and a desktop application for hackathons and internships using the QT framework of Python.
-
-          I am a quick learner, a problem-solver, and a team player. I enjoy collaborating with others to achieve common
-          goals and create innovative solutions. In my free time, I like to explore new technologies, read tech-related
-          blogs, and contribute to open-source projects.
-
-          If you are interested in working together on a project or learning more about my skills and experience, please
-          feel free to contact me. Thank you for visiting my portfolio website, and I hope you enjoy browsing my
-          projects!
-        </p>
-        <h4 class="text-center my-5">Education</h4>
-        <div class="row">
-          <div class="col">
-            <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#multiCollapseExample1" aria-expanded="false" aria-controls="multiCollapseExample1">Higher Secondary</button>
-          </div>
-          <div class="col">
-            <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#multiCollapseExample2" aria-expanded="false" aria-controls="multiCollapseExample2">Senior Secondary</button>
-          </div>
-          <div class="col">
-            <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#multiCollapseExample3" aria-expanded="false" aria-controls="multiCollapseExample3">Bachelors</button>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col">
-            <div class="collapse multi-collapse" id="multiCollapseExample1">
-              <div class="card card-body">
-                <p>Kendriya Vidyalaya No.3, Airforce Station Makarpura, Vadodara, Gujarat, 390014 <br>2018<br>CBSE<br>80.4% </p>                
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="collapse multi-collapse" id="multiCollapseExample2">
-              <div class="card card-body">
-                <p>Kendriya Vidyalaya No.3, Airforce Station Makarpura, Vadodara, Gujarat, 390014 <br>2021<br>CBSE<br>64.6% </p>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="collapse multi-collapse" id="multiCollapseExample3">
-              <div class="card card-body">
-                <p>Vellore Institute of Technology, Bhopal<br>Computer Science Engineering<br>Currently Studying (2021-2025)<br>Deemed University(UGC)<br>CGPA: 8.5 </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="scrollspyHeading3" class="third-section">
-      <h2 class="headings text-center">Skills</h2>
-      <div class="container my-5 mx-auto">
-        <div class="row align-items-start my-3">
-          <div class="col">
-            <i class="fa-brands fa-react fa-2xl" style="color: #5ed4f3;"></i>
-          </div>
-          <div class="col">
-            <div class="progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="85"
-              aria-valuemin="0" aria-valuemax="100" style="height: 30px">
-              <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 85%; background-color: #5ed4f3;"></div>
-            </div>
-          </div>
-        </div>
-        <div class="row align-items-start my-3">
-          <div class="col">
-            <i class="fa-brands fa-figma fa-2xl" style="color: #a036f2;"></i>
-          </div>
-          <div class="col">
-            <div class="progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="75"
-              aria-valuemin="0" aria-valuemax="100" style="height: 30px">
-              <div class="progress-bar progress-bar-striped progress-bar-animated"
-                style="width: 80%; background-color: #a036f2;"></div>
-            </div>
-          </div>
-        </div>
-        <div class="row align-items-start my-3">
-          <div class="col">
-            <i class="fa-brands fa-python fa-2xl" style="color: #3071a4;"></i>
-          </div>
-          <div class="col">
-            <div class="progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="75"
-              aria-valuemin="0" aria-valuemax="100" style="height: 30px">
-              <div class="progress-bar progress-bar-striped progress-bar-animated"
-                style="width: 90%; background-color: #3071a4;"></div>
-            </div>
-          </div>
-        </div>
-        <div class="row align-items-start my-3">
-          <div class="col">
-            <i class="fa-brands fa-html5 fa-2xl" style="color: #e34c26;"></i>
-          </div>
-          <div class="col">
-            <div class="progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="75"
-              aria-valuemin="0" aria-valuemax="100" style="height: 30px">
-              <div class="progress-bar progress-bar-striped progress-bar-animated "
-                style="width: 97%; background-color: #e34c26;"></div>
-            </div>
-          </div>
-        </div>
-        <div class="row align-items-start my-3">
-          <div class="col">
-            <i class="fa-brands fa-css3 fa-2xl" style="color: #4169ff;"></i>
-          </div>
-          <div class="col">
-            <div class="progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="75"
-              aria-valuemin="0" aria-valuemax="100" style="height: 30px">
-              <div class="progress-bar progress-bar-striped progress-bar-animated bg-primary" style="width: 75%"></div>
-            </div>
-          </div>
-        </div>
-        <div class="row align-items-start my-3">
-          <div class="col">
-            <i class="fa-brands fa-js fa-2xl" style="color: #efd81d;"></i>
-          </div>
-          <div class="col">
-            <div class="progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="75"
-              aria-valuemin="0" aria-valuemax="100" style="height: 30px">
-              <div class="progress-bar progress-bar-striped progress-bar-animated "
-                style="width: 55%; background-color:#efd81d"></div>
-            </div>
-          </div>
-        </div>
-        <div class="row align-items-start my-3">
-          <div class="col">
-            <i class="fa-brands fa-node fa-2xl" style="color: #3e863d;"></i>
-          </div>
-          <div class="col">
-            <div class="progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="75"
-              aria-valuemin="0" aria-valuemax="100" style="height: 30px">
-              <div class="progress-bar progress-bar-striped progress-bar-animated "
-                style="width: 15%; background-color:#3e863d"></div>
-            </div>
-          </div>
-        </div>
-        <div class="row align-items-start my-3">
-          <div class="col">
-            <!-- <i class="fa-brands fa-node fa-2xl" style="color: #3e863d;"></i> -->
-            <img src="https://www.vectorlogo.zone/logos/expressjs/expressjs-icon.svg" alt="">
-          </div>
-          <div class="col">
-            <div class="progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="75"
-              aria-valuemin="0" aria-valuemax="100" style="height: 30px">
-              <div class="progress-bar progress-bar-striped progress-bar-animated "
-                style="width: 15%; background-color:#000000"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="scrollspyHeading4" class="fourth-section">
-      <h2 class="headings text-center">Projects</h2>
-      <div class="d-flex container my-5">
-        <div class="card mx-auto" style="width: 18rem;">
-          <img
-            src="./media/MPF.png"
-            class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Minimal Pair Finder</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-              content.</p>
-            <a href="https://github.com/UtkarshUttam/Minimal-Pair-Finder" target="_blank" class="btn btn-dark"><i class="fa-brands fa-github " style="color: #ffffff;"></i> Repositry</a>
-          </div>
-        </div>
-        <div class="card mx-auto" style="width: 18rem;">
-          <img
-            src="./media/white_logo.png"
-            class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Devhack</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-              content.</p>
-            <a href="https://github.com/UtkarshUttam/DevHack" target="_blank" class="btn btn-dark"><i class="fa-brands fa-github " style="color: #ffffff;"></i> Repositry</a>
-          </div>
-        </div>
-        <div class="card mx-auto" style="width: 18rem;">
-          <img
-            src="./media/RHW.png"
-            class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Responsive Hostel website</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-              content.</p>
-            <a href="https://github.com/UtkarshUttam/Responsive_Hostel_Website" target="_blank" class="btn btn-dark"><i class="fa-brands fa-github " style="color: #ffffff;"></i> Repository</a>
-          </div>
-        </div>
-        
-        
-        <div class="card mx-auto" style="width: 18rem;">
-          <img
-            src="./media/SBG_TL.png"
-            class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Simple banking GUI</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-              content.</p>
-            <a href="https://github.com/UtkarshUttam/Simple_Banking_GUI_with_Tkinter" target="_blank" class="btn btn-dark"><i class="fa-brands fa-github " style="color: #ffffff;"></i> Repository</a>
-          </div>
-        </div>
-        <!--
-      </div>
-      <div class="d-flex container my-5">
-        <div class="card mx-auto" style="width: 18rem;">
-          <img
-            src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Rafale_-_RIAT_2009_%283751416421%29.jpg/1200px-Rafale_-_RIAT_2009_%283751416421%29.jpg"
-            class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-              content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
-          </div>
-        </div>
-        <div class="card mx-auto" style="width: 18rem;">
-          <img
-            src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Rafale_-_RIAT_2009_%283751416421%29.jpg/1200px-Rafale_-_RIAT_2009_%283751416421%29.jpg"
-            class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-              content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
-          </div>
-        </div>
-        <div class="card mx-auto" style="width: 18rem;">
-          <img
-            src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Rafale_-_RIAT_2009_%283751416421%29.jpg/1200px-Rafale_-_RIAT_2009_%283751416421%29.jpg"
-            class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-              content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
-          </div>
-        </div> -->
-      </div>
-    </section>
-
-    <section id="scrollspyHeading5" class="fifth-section">
-      <h2 class="headings text-center">Gallery</h2>
-      <div class="container">
-        <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <img src="./media/43.jpg" class="d-block w-100 img-fluid" alt="...">
-            </div>
-            <div class="carousel-item">
-              <img src="./media/IMG_20201208_071628-02.png" class="d-block h-100 w-100 img-fluid" alt="...">
-            </div>
-            <div class="carousel-item">
-              <img src="./media/IMG_20210106_144938.png" class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-              <img src="./media/IMG_20210122_073705.png" class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-              <img src="./media/IMG_20210122_223333_449.png" class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-              <img src="./media/photo_2023-02-22_10-52-56.jpg" class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-              <img src="./media/photo_2023-02-22_10-21-50.png" class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-              <img src="./media/photo_2023-02-22_10-21-48.png" class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-              <img src="./media/photo_2023-02-22_10-52-56.jpg" class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-              <img src="./media/IMG_20210129_065901.png" class="d-block w-100" alt="...">
-            </div>
-
-          </div>
-          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
-            data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
-            data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
-        </div>
-      </div>
-    </section>
-
-    <section id="scrollspyHeading6" class="sixth-section">
-      <h2 class="headings text-center">Get in Touch!</h2>
-      <div class="container contact">
-        <div class="row">
-          <div class="col-md-3">
-            <div class="contact-info">
-              <img src="https://image.ibb.co/kUASdV/contact-image.png" alt="image" />
-              <h2>Contact Me</h2>
-              <h4>Would love to hear from you !</h4>
-            </div>
-          </div>
-          <div class="col-md-9">
-            <div class="contact-form">
-              <div class="form-group">
-                <label class="control-label col-sm-2" for="fname">First Name:</label>
-                <div class="col-sm-10">
-                  <input type="text" class="form-control" id="fname" placeholder="Enter First Name" name="fname">
-                </div>
-              </div>
-              <div class="form-group">
-                <label class="control-label col-sm-2" for="lname">Last Name:</label>
-                <div class="col-sm-10">
-                  <input type="text" class="form-control" id="lname" placeholder="Enter Last Name" name="lname">
-                </div>
-              </div>
-              <div class="form-group">
-                <label class="control-label col-sm-2" for="email">Email:</label>
-                <div class="col-sm-10">
-                  <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
-                </div>
-              </div>
-              <div class="form-group">
-                <label class="control-label col-sm-2" for="comment">Your Message:</label>
-                <div class="col-sm-10">
-                  <textarea class="form-control" rows="5" id="comment"></textarea>
-                </div>
-              </div>
-              <div class="form-group">
-                <div class="col-sm-offset-2 col-sm-10 my-4">
-                  <button type="submit" class="btn btn-default">Submit</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </section>
-  </div>
-  <footer>
-    <div class="mt-5 pt-5 pb-5 footer">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-5 col-xs-12 about-company">
-            <h2>Connect with me</h2>
-            <div class="container d-flex column-gap-3">
-              <a href="https://www.linkedin.com/in/utkarsh-uttam-0884ab1b7/"><i class="fa-brands fa-linkedin fa-2xl" style="color: #ffffff;"></i></a>
-              <a href="https://github.com/UtkarshUttam"><i class="fa-brands fa-github fa-2xl" style="color: #ffffff;"></i></a>
-              <a href="https://www.facebook.com/utkarsh.uttam.56"><i class="fa-brands fa-facebook fa-2xl" style="color: #ffffff;"></i></a>
-              <a href="https://www.instagram.com/utkarshuttam_3/"><i class="fa-brands fa-instagram fa-2xl" style="color: #ffffff;"></i></a>
-              <a href="https://twitter.com/UTKARSHUTTAM_3"><i class="fa-brands fa-twitter fa-2xl" style="color: #ffffff;"></i></a>
-            </div>
-          </div>
-          <div class="col-lg-3 col-xs-12 links">
+          <!-- Theme Toggle & Mobile menu buttons -->
+          <div class="md:hidden flex items-center space-x-2">
+            <!-- Mobile Theme Toggle -->
+            <button
+              id="mobile-theme-toggle"
+              class="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition-all duration-300"
+              aria-label="Toggle theme"
+            >
+              <i id="mobile-theme-icon" class="fas fa-moon"></i>
+            </button>
             
-          </div>
-          <div class="col-lg-4 col-xs-12 location">            
-            <p><i class="fa-sharp fa-solid fa-location-dot fa-2xl" style="color: #ffffff;"></i>   -   Vadodara/Bhopal, India</p>
-            <p class="mb-3 my-5"><i class="fa-solid fa-mobile fa-2xl" style="color: #ffffff;"></i> -  (+91) 6352-412-745</p>
-            <p><i class="fa-solid fa-envelope fa-2xl my-5" style="color: #ffffff;"></i>         -   utkarshuttam2044@gmail.com</p>
-          </div>
-        </div>
-        <div class="row mt-5">
-          <div class="col copyright">
-            <p class=""><small class="text-white-50">© 2023. All Rights Reserved.</small></p>
+            <button
+              id="mobile-menu-btn"
+              class="text-gray-700 dark:text-gray-300 hover:text-primary focus:outline-none"
+            >
+              <i class="fas fa-bars text-xl"></i>
+            </button>
           </div>
         </div>
       </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="md:hidden hidden bg-white dark:bg-gray-900 border-t dark:border-gray-700">
+        <div class="px-2 pt-2 pb-3 space-y-1">
+          <a
+            href="#home"
+            class="block px-3 py-2 text-gray-700 dark:text-gray-300 hover:text-primary transition-colors"
+            >Home</a
+          >
+          <a
+            href="#about"
+            class="block px-3 py-2 text-gray-700 dark:text-gray-300 hover:text-primary transition-colors"
+            >About</a
+          >
+          <a
+            href="#skills"
+            class="block px-3 py-2 text-gray-700 dark:text-gray-300 hover:text-primary transition-colors"
+            >Skills</a
+          >
+          <a
+            href="#projects"
+            class="block px-3 py-2 text-gray-700 dark:text-gray-300 hover:text-primary transition-colors"
+            >Projects</a
+          >
+          <a
+            href="#gallery"
+            class="block px-3 py-2 text-gray-700 dark:text-gray-300 hover:text-primary transition-colors"
+            >Gallery</a
+          >
+
+          <a
+            href="./resume/resume.html"
+            class="block px-3 py-2 text-primary font-medium"
+            >Resume</a
+          >
+        </div>
       </div>
-  </footer>
-  
+    </nav>
+    <!-- Hero Section -->
+    <section
+      id="home"
+      class="min-h-screen flex items-center justify-center relative overflow-hidden"
+    >
+      <!-- Background with blur and navy gradient overlay -->
+      <div
+        class="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style="
+          background-image: url('./media/a7237d00f85945d0e54029e0fed47112.jpg');
+          filter: blur(2px);
+          transform: scale(1.2);
+        "
+      ></div>
+      <div
+        class="absolute inset-0 bg-gradient-to-br from-blue-900/80 via-slate-900/85 to-blue-800/75"
+      ></div>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
-    crossorigin="anonymous"></script>
-  <script src="script.js" async defer></script>
-</body>
+      <!-- Content -->
+      <div
+        class="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto"
+      >
+        <div class="animate-fade-in">
+          <img
+            src="./media/square.jpg"
+            alt="Utkarsh Uttam"
+            class="w-48 h-48 rounded-full mx-auto mb-8 border-4 border-white shadow-2xl animate-float object-cover"
+          />
 
+          <h1
+            class="text-5xl md:text-7xl font-bold text-white mb-4 animate-slide-up"
+          >
+            Utkarsh Uttam
+          </h1>
+
+          <div class="text-xl md:text-2xl text-gray-200 mb-6 animate-slide-up">
+            <span class="text-accent">I am a</span>
+          </div>
+
+          <div class="text-lg md:text-xl text-gray-300 mb-8 animate-slide-up">
+            <span
+              class="inline-block mx-2 px-3 py-1 bg-white/10 rounded-full backdrop-blur-sm"
+              >Developer</span
+            >
+            <span
+              class="inline-block mx-2 px-3 py-1 bg-white/10 rounded-full backdrop-blur-sm"
+              >Designer</span
+            >
+            <span
+              class="inline-block mx-2 px-3 py-1 bg-white/10 rounded-full backdrop-blur-sm"
+              >Photographer</span
+            >
+            <span
+              class="inline-block mx-2 px-3 py-1 bg-white/10 rounded-full backdrop-blur-sm"
+              >Aviation Enthusiast</span
+            >
+          </div>
+
+          <div
+            class="flex flex-col sm:flex-row gap-4 justify-center animate-slide-up"
+          >
+            <a
+              href="#projects"
+              class="bg-primary hover:bg-secondary text-white px-8 py-3 rounded-lg font-medium transition-all duration-300 transform hover:scale-105"
+            >
+              View My Work
+            </a>
+            <a
+              href="mailto:utkarshuttam2044@gmail.com"
+              class="border-2 border-white text-white hover:bg-white hover:text-dark px-8 py-3 rounded-lg font-medium transition-all duration-300"
+            >
+              Get In Touch
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scroll indicator -->
+      <div
+        class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce"
+      >
+        <a href="#about" class="text-white hover:text-accent transition-colors">
+          <i class="fas fa-chevron-down text-2xl"></i>
+        </a>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white dark:bg-gray-800"></section>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            About Me
+          </h2>
+          <div class="w-24 h-1 bg-primary mx-auto"></div>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <div class="space-y-6">
+            <p class="text-lg text-gray-600 leading-relaxed">
+              Hello and welcome to my portfolio! I'm Utkarsh Uttam, a passionate
+              B.Tech student at Vellore Institute of Technology, Bhopal,
+              specializing in Computer Science Engineering.
+            </p>
+
+            <p class="text-lg text-gray-600 leading-relaxed">
+              My journey in programming began at a young age, and I've been
+              exploring various technologies ever since. I have hands-on
+              experience with modern web technologies including React, Python,
+              JavaScript, and full-stack development.
+            </p>
+
+            <p class="text-lg text-gray-600 leading-relaxed">
+              I'm a quick learner, problem-solver, and team player who enjoys
+              collaborating on innovative solutions. When I'm not coding, you'll
+              find me exploring new technologies, contributing to open-source
+              projects, or capturing moments through photography.
+            </p>
+
+            <div class="flex flex-wrap gap-3 mt-6">
+              <span
+                class="px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium"
+                >Problem Solver</span
+              >
+              <span
+                class="px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium"
+                >Team Player</span
+              >
+              <span
+                class="px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium"
+                >Quick Learner</span
+              >
+              <span
+                class="px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium"
+                >Open Source</span
+              >
+            </div>
+          </div>
+
+          <div class="space-y-6">
+            <h3 class="text-2xl font-bold text-gray-900 mb-6">Education</h3>
+
+            <!-- Education Cards -->
+            <div class="space-y-4">
+              <div
+                class="bg-gray-50 rounded-lg p-6 hover:shadow-lg transition-shadow"
+              >
+                <div class="flex items-start justify-between">
+                  <div>
+                    <h4 class="font-semibold text-gray-900">
+                      Bachelor's Degree
+                    </h4>
+                    <p class="text-primary font-medium">
+                      Computer Science Engineering
+                    </p>
+                    <p class="text-gray-600 text-sm">
+                      Vellore Institute of Technology, Bhopal
+                    </p>
+                    <p class="text-gray-500 text-sm">2021-2025 (Completed) • CGPA: 8.74</p>
+                  </div>
+                  <div class="text-primary">
+                    <i class="fas fa-graduation-cap text-2xl"></i>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="bg-gray-50 rounded-lg p-6 hover:shadow-lg transition-shadow"
+              >
+                <div class="flex items-start justify-between">
+                  <div>
+                    <h4 class="font-semibold text-gray-900">
+                      Senior Secondary
+                    </h4>
+                    <p class="text-primary font-medium">CBSE Board</p>
+                    <p class="text-gray-600 text-sm">
+                      Kendriya Vidyalaya, Vadodara
+                    </p>
+                    <p class="text-gray-500 text-sm">2021 • 64.6%</p>
+                  </div>
+                  <div class="text-primary">
+                    <i class="fas fa-school text-2xl"></i>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="bg-gray-50 rounded-lg p-6 hover:shadow-lg transition-shadow"
+              >
+                <div class="flex items-start justify-between">
+                  <div>
+                    <h4 class="font-semibold text-gray-900">
+                      Higher Secondary
+                    </h4>
+                    <p class="text-primary font-medium">CBSE Board</p>
+                    <p class="text-gray-600 text-sm">
+                      Kendriya Vidyalaya, Vadodara
+                    </p>
+                    <p class="text-gray-500 text-sm">2018 • 80.4%</p>
+                  </div>
+                  <div class="text-primary">
+                    <i class="fas fa-book text-2xl"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-gray-900 text-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-5xl font-bold mb-4">
+            Skills & Technologies
+          </h2>
+          <div class="w-24 h-1 bg-accent mx-auto"></div>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <!-- Frontend Skills -->
+          <div
+            class="bg-gray-800 rounded-xl p-6 hover:bg-gray-700 transition-colors"
+          >
+            <h3 class="text-xl font-bold mb-6 text-accent">Frontend</h3>
+            <div class="space-y-4">
+              <div class="skill-item">
+                <div class="flex items-center justify-between mb-2">
+                  <div class="flex items-center">
+                    <i class="fab fa-react text-2xl text-cyan-400 mr-3"></i>
+                    <span class="font-medium">React</span>
+                  </div>
+                  <span class="text-sm text-gray-400">85%</span>
+                </div>
+                <div class="w-full bg-gray-600 rounded-full h-2">
+                  <div
+                    class="bg-cyan-400 h-2 rounded-full"
+                    style="width: 85%"
+                  ></div>
+                </div>
+              </div>
+
+              <div class="skill-item">
+                <div class="flex items-center justify-between mb-2">
+                  <div class="flex items-center">
+                    <i class="fab fa-html5 text-2xl text-orange-500 mr-3"></i>
+                    <span class="font-medium">HTML5</span>
+                  </div>
+                  <span class="text-sm text-gray-400">97%</span>
+                </div>
+                <div class="w-full bg-gray-600 rounded-full h-2">
+                  <div
+                    class="bg-orange-500 h-2 rounded-full"
+                    style="width: 97%"
+                  ></div>
+                </div>
+              </div>
+
+              <div class="skill-item">
+                <div class="flex items-center justify-between mb-2">
+                  <div class="flex items-center">
+                    <i class="fab fa-css3-alt text-2xl text-blue-500 mr-3"></i>
+                    <span class="font-medium">CSS3</span>
+                  </div>
+                  <span class="text-sm text-gray-400">75%</span>
+                </div>
+                <div class="w-full bg-gray-600 rounded-full h-2">
+                  <div
+                    class="bg-blue-500 h-2 rounded-full"
+                    style="width: 75%"
+                  ></div>
+                </div>
+              </div>
+
+              <div class="skill-item">
+                <div class="flex items-center justify-between mb-2">
+                  <div class="flex items-center">
+                    <i
+                      class="fab fa-js-square text-2xl text-yellow-400 mr-3"
+                    ></i>
+                    <span class="font-medium">JavaScript</span>
+                  </div>
+                  <span class="text-sm text-gray-400">55%</span>
+                </div>
+                <div class="w-full bg-gray-600 rounded-full h-2">
+                  <div
+                    class="bg-yellow-400 h-2 rounded-full"
+                    style="width: 55%"
+                  ></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Backend Skills -->
+          <div
+            class="bg-gray-800 rounded-xl p-6 hover:bg-gray-700 transition-colors"
+          >
+            <h3 class="text-xl font-bold mb-6 text-accent">Backend</h3>
+            <div class="space-y-4">
+              <div class="skill-item">
+                <div class="flex items-center justify-between mb-2">
+                  <div class="flex items-center">
+                    <i class="fab fa-python text-2xl text-blue-400 mr-3"></i>
+                    <span class="font-medium">Python</span>
+                  </div>
+                  <span class="text-sm text-gray-400">90%</span>
+                </div>
+                <div class="w-full bg-gray-600 rounded-full h-2">
+                  <div
+                    class="bg-blue-400 h-2 rounded-full"
+                    style="width: 90%"
+                  ></div>
+                </div>
+              </div>
+
+              <div class="skill-item">
+                <div class="flex items-center justify-between mb-2">
+                  <div class="flex items-center">
+                    <i class="fab fa-node-js text-2xl text-green-500 mr-3"></i>
+                    <span class="font-medium">Node.js</span>
+                  </div>
+                  <span class="text-sm text-gray-400">15%</span>
+                </div>
+                <div class="w-full bg-gray-600 rounded-full h-2">
+                  <div
+                    class="bg-green-500 h-2 rounded-full"
+                    style="width: 15%"
+                  ></div>
+                </div>
+              </div>
+
+              <div class="skill-item">
+                <div class="flex items-center justify-between mb-2">
+                  <div class="flex items-center">
+                    <img
+                      src="https://www.vectorlogo.zone/logos/expressjs/expressjs-icon.svg"
+                      alt="Express"
+                      class="w-6 h-6 mr-3"
+                    />
+                    <span class="font-medium">Express.js</span>
+                  </div>
+                  <span class="text-sm text-gray-400">15%</span>
+                </div>
+                <div class="w-full bg-gray-600 rounded-full h-2">
+                  <div
+                    class="bg-gray-300 h-2 rounded-full"
+                    style="width: 15%"
+                  ></div>
+                </div>
+              </div>
+
+              <div class="skill-item">
+                <div class="flex items-center justify-between mb-2">
+                  <div class="flex items-center">
+                    <i class="fab fa-java text-2xl text-red-500 mr-3"></i>
+                    <span class="font-medium">Java</span>
+                  </div>
+                  <span class="text-sm text-gray-400">80%</span>
+                </div>
+                <div class="w-full bg-gray-600 rounded-full h-2">
+                  <div
+                    class="bg-red-500 h-2 rounded-full"
+                    style="width: 80%"
+                  ></div>
+                </div>
+              </div>
+
+              <div class="skill-item">
+                <div class="flex items-center justify-between mb-2">
+                  <div class="flex items-center">
+                    <i class="fas fa-database text-2xl text-blue-600 mr-3"></i>
+                    <span class="font-medium">MySQL</span>
+                  </div>
+                  <span class="text-sm text-gray-400">70%</span>
+                </div>
+                <div class="w-full bg-gray-600 rounded-full h-2">
+                  <div
+                    class="bg-blue-600 h-2 rounded-full"
+                    style="width: 70%"
+                  ></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tools & Design -->
+          <div
+            class="bg-gray-800 rounded-xl p-6 hover:bg-gray-700 transition-colors"
+          >
+            <h3 class="text-xl font-bold mb-6 text-accent">Tools & Design</h3>
+            <div class="space-y-4">
+              <div class="skill-item">
+                <div class="flex items-center justify-between mb-2">
+                  <div class="flex items-center">
+                    <i class="fab fa-figma text-2xl text-purple-500 mr-3"></i>
+                    <span class="font-medium">Figma</span>
+                  </div>
+                  <span class="text-sm text-gray-400">80%</span>
+                </div>
+                <div class="w-full bg-gray-600 rounded-full h-2">
+                  <div
+                    class="bg-purple-500 h-2 rounded-full"
+                    style="width: 80%"
+                  ></div>
+                </div>
+              </div>
+
+              <div class="skill-item">
+                <div class="flex items-center justify-between mb-2">
+                  <div class="flex items-center">
+                    <i class="fab fa-git-alt text-2xl text-orange-600 mr-3"></i>
+                    <span class="font-medium">Git</span>
+                  </div>
+                  <span class="text-sm text-gray-400">85%</span>
+                </div>
+                <div class="w-full bg-gray-600 rounded-full h-2">
+                  <div
+                    class="bg-orange-600 h-2 rounded-full"
+                    style="width: 85%"
+                  ></div>
+                </div>
+              </div>
+
+              <div class="skill-item">
+                <div class="flex items-center justify-between mb-2">
+                  <div class="flex items-center">
+                    <i class="fas fa-code text-2xl text-green-400 mr-3"></i>
+                    <span class="font-medium">C/C++</span>
+                  </div>
+                  <span class="text-sm text-gray-400">65%</span>
+                </div>
+                <div class="w-full bg-gray-600 rounded-full h-2">
+                  <div
+                    class="bg-green-400 h-2 rounded-full"
+                    style="width: 65%"
+                  ></div>
+                </div>
+              </div>
+
+              <div class="skill-item">
+                <div class="flex items-center justify-between mb-2">
+                  <div class="flex items-center">
+                    <i class="fab fa-php text-2xl text-indigo-400 mr-3"></i>
+                    <span class="font-medium">PHP</span>
+                  </div>
+                  <span class="text-sm text-gray-400">60%</span>
+                </div>
+                <div class="w-full bg-gray-600 rounded-full h-2">
+                  <div
+                    class="bg-indigo-400 h-2 rounded-full"
+                    style="width: 60%"
+                  ></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testing & QA -->
+          <div
+            class="bg-gray-800 rounded-xl p-6 hover:bg-gray-700 transition-colors"
+          >
+            <h3 class="text-xl font-bold mb-6 text-accent">Testing & QA</h3>
+            <div class="space-y-4">
+              <div class="skill-item">
+                <div class="flex items-center justify-between mb-2">
+                  <div class="flex items-center">
+                    <i class="fas fa-robot text-2xl text-green-500 mr-3"></i>
+                    <span class="font-medium">Selenium</span>
+                  </div>
+                  <span class="text-sm text-gray-400">75%</span>
+                </div>
+                <div class="w-full bg-gray-600 rounded-full h-2">
+                  <div
+                    class="bg-green-500 h-2 rounded-full"
+                    style="width: 75%"
+                  ></div>
+                </div>
+              </div>
+
+              <div class="skill-item">
+                <div class="flex items-center justify-between mb-2">
+                  <div class="flex items-center">
+                    <i class="fas fa-paper-plane text-2xl text-orange-500 mr-3"></i>
+                    <span class="font-medium">Postman</span>
+                  </div>
+                  <span class="text-sm text-gray-400">80%</span>
+                </div>
+                <div class="w-full bg-gray-600 rounded-full h-2">
+                  <div
+                    class="bg-orange-500 h-2 rounded-full"
+                    style="width: 80%"
+                  ></div>
+                </div>
+              </div>
+
+              <div class="skill-item">
+                <div class="flex items-center justify-between mb-2">
+                  <div class="flex items-center">
+                    <i class="fas fa-cucumber text-2xl text-green-400 mr-3"></i>
+                    <span class="font-medium">Cucumber</span>
+                  </div>
+                  <span class="text-sm text-gray-400">70%</span>
+                </div>
+                <div class="w-full bg-gray-600 rounded-full h-2">
+                  <div
+                    class="bg-green-400 h-2 rounded-full"
+                    style="width: 70%"
+                  ></div>
+                </div>
+              </div>
+
+              <div class="skill-item">
+                <div class="flex items-center justify-between mb-2">
+                  <div class="flex items-center">
+                    <i class="fas fa-shield-alt text-2xl text-blue-500 mr-3"></i>
+                    <span class="font-medium">Rest Assured</span>
+                  </div>
+                  <span class="text-sm text-gray-400">65%</span>
+                </div>
+                <div class="w-full bg-gray-600 rounded-full h-2">
+                  <div
+                    class="bg-blue-500 h-2 rounded-full"
+                    style="width: 65%"
+                  ></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div></i></span></div></i></div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-gray-50 dark:bg-gray-900"></section>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            Featured Projects
+          </h2>
+          <div class="w-24 h-1 bg-primary mx-auto mb-6"></div>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            Here are some of my recent projects that showcase my skills in web
+            development, desktop applications, and problem-solving.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-1 lg:grid-cols-2 gap-8">
+          <!-- Project 1 -->
+          <div class="group bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden border border-gray-100 dark:border-gray-700">
+            <div class="relative overflow-hidden h-[220px]">
+              <img
+                src="./media/MPF.png"
+                alt="Minimal Pair Finder"
+                class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+              />
+              <div class="absolute top-4 right-4">
+                <span class="bg-blue-500 text-white px-3 py-1 rounded-full text-xs font-medium">Featured</span>
+              </div>
+            </div>
+            <div class="p-6">
+              <div class="flex items-center justify-between mb-3">
+                <h3 class="text-xl font-bold text-gray-900 dark:text-white">Minimal Pair Finder</h3>
+                <i class="fas fa-language text-blue-500 text-xl"></i>
+              </div>
+              <p class="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
+                A linguistic tool that helps identify minimal pairs in languages, useful for phonetic analysis and language learning applications.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-6">
+                <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs font-medium rounded-full">Python</span>
+                <span class="px-3 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 text-xs font-medium rounded-full">Linguistics</span>
+                <span class="px-3 py-1 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 text-xs font-medium rounded-full">Algorithm</span>
+              </div>
+              <div class="flex items-center justify-between">
+                <a
+                  href="https://github.com/UtkarshUttam/Minimal-Pair-Finder"
+                  target="_blank"
+                  class="inline-flex items-center px-6 py-3 bg-gray-900 dark:bg-gray-700 text-white rounded-lg hover:bg-gray-800 dark:hover:bg-gray-600 transition-all duration-300 transform hover:scale-105"
+                >
+                  <i class="fab fa-github mr-2"></i>
+                  View Code
+                </a>
+                <div class="flex items-center text-gray-500 dark:text-gray-400">
+                  <i class="fas fa-star mr-1 text-yellow-500"></i>
+                  <span class="text-sm font-medium">Linguistics</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 2 -->
+          <div class="group bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden border border-gray-100 dark:border-gray-700">
+            <div class="relative overflow-hidden h-[220px]">
+              <img
+                src="./media/white_logo.png"
+                alt="DevHack"
+                class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+              />
+              <div class="absolute top-4 right-4">
+                <span class="bg-purple-500 text-white px-3 py-1 rounded-full text-xs font-medium">Desktop</span>
+              </div>
+            </div>
+            <div class="p-6">
+              <div class="flex items-center justify-between mb-3">
+                <h3 class="text-xl font-bold text-gray-900 dark:text-white">DevHack</h3>
+                <i class="fas fa-desktop text-purple-500 text-xl"></i>
+              </div>
+              <p class="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
+                A comprehensive platform for hackathons and internship management, built with modern desktop application frameworks.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-6">
+                <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs font-medium rounded-full">Python</span>
+                <span class="px-3 py-1 bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200 text-xs font-medium rounded-full">Qt Framework</span>
+                <span class="px-3 py-1 bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200 text-xs font-medium rounded-full">MySQL</span>
+              </div>
+              <div class="flex items-center justify-between">
+                <a
+                  href="https://github.com/UtkarshUttam/DevHack"
+                  target="_blank"
+                  class="inline-flex items-center px-6 py-3 bg-gray-900 dark:bg-gray-700 text-white rounded-lg hover:bg-gray-800 dark:hover:bg-gray-600 transition-all duration-300 transform hover:scale-105"
+                >
+                  <i class="fab fa-github mr-2"></i>
+                  View Code
+                </a>
+                <div class="flex items-center text-gray-500 dark:text-gray-400">
+                  <i class="fas fa-code mr-1 text-purple-500"></i>
+                  <span class="text-sm font-medium">Desktop App</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 3 -->
+          <div class="group bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden border border-gray-100 dark:border-gray-700">
+            <div class="relative overflow-hidden h-[220px]">
+              <img
+                src="./media/RHW.png"
+                alt="Responsive Hostel Website"
+                class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+              />
+              <div class="absolute top-4 right-4">
+                <span class="bg-green-500 text-white px-3 py-1 rounded-full text-xs font-medium">Web</span>
+              </div>
+            </div>
+            <div class="p-6">
+              <div class="flex items-center justify-between mb-3">
+                <h3 class="text-xl font-bold text-gray-900 dark:text-white">Responsive Hostel Website</h3>
+                <i class="fas fa-mobile-alt text-green-500 text-xl"></i>
+              </div>
+              <p class="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
+                A fully responsive website for hostel management with modern UI/UX design and mobile-first approach.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-6">
+                <span class="px-3 py-1 bg-orange-100 dark:bg-orange-900 text-orange-800 dark:text-orange-200 text-xs font-medium rounded-full">HTML5</span>
+                <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs font-medium rounded-full">CSS3</span>
+                <span class="px-3 py-1 bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200 text-xs font-medium rounded-full">JavaScript</span>
+                <span class="px-3 py-1 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 text-xs font-medium rounded-full">PHP</span>
+              </div>
+              <div class="flex items-center justify-between">
+                <a
+                  href="https://github.com/UtkarshUttam/Responsive_Hostel_Website"
+                  target="_blank"
+                  class="inline-flex items-center px-6 py-3 bg-gray-900 dark:bg-gray-700 text-white rounded-lg hover:bg-gray-800 dark:hover:bg-gray-600 transition-all duration-300 transform hover:scale-105"
+                >
+                  <i class="fab fa-github mr-2"></i>
+                  View Code
+                </a>
+                <div class="flex items-center text-gray-500 dark:text-gray-400">
+                  <i class="fas fa-mobile-alt mr-1 text-green-500"></i>
+                  <span class="text-sm font-medium">Responsive</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 4 -->
+          <div class="group bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden border border-gray-100 dark:border-gray-700">
+            <div class="relative overflow-hidden h-[220px]">
+              <img
+                src="./media/SBG_TL.png"
+                alt="Simple Banking GUI"
+                class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+              />
+              <div class="absolute top-4 right-4">
+                <span class="bg-orange-500 text-white px-3 py-1 rounded-full text-xs font-medium">GUI</span>
+              </div>
+            </div>
+            <div class="p-6">
+              <div class="flex items-center justify-between mb-3">
+                <h3 class="text-xl font-bold text-gray-900 dark:text-white">Simple Banking GUI</h3>
+                <i class="fas fa-university text-orange-500 text-xl"></i>
+              </div>
+              <p class="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
+                A user-friendly banking application built with Python's Tkinter library, featuring account management and transaction processing.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-6">
+                <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs font-medium rounded-full">Python</span>
+                <span class="px-3 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 text-xs font-medium rounded-full">Tkinter</span>
+                <span class="px-3 py-1 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 text-xs font-medium rounded-full">GUI</span>
+                <span class="px-3 py-1 bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200 text-xs font-medium rounded-full">Banking</span>
+              </div>
+              <div class="flex items-center justify-between">
+                <a
+                  href="https://github.com/UtkarshUttam/Simple_Banking_GUI_with_Tkinter"
+                  target="_blank"
+                  class="inline-flex items-center px-6 py-3 bg-gray-900 dark:bg-gray-700 text-white rounded-lg hover:bg-gray-800 dark:hover:bg-gray-600 transition-all duration-300 transform hover:scale-105"
+                >
+                  <i class="fab fa-github mr-2"></i>
+                  View Code
+                </a>
+                <div class="flex items-center text-gray-500 dark:text-gray-400">
+                  <i class="fas fa-university mr-1 text-orange-500"></i>
+                  <span class="text-sm font-medium">Banking</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+
+
+
+
+
+
+
+        </div>
+
+        <!-- View More Projects Button -->
+        <div class="text-center mt-12">
+          <a
+            href="https://github.com/UtkarshUttam"
+            target="_blank"
+            class="inline-flex items-center px-8 py-3 bg-primary text-white rounded-lg hover:bg-secondary transition-all duration-300 transform hover:scale-105"
+          >
+            <i class="fab fa-github mr-2"></i>
+            View More Projects
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-20 bg-white dark:bg-gray-800">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            Photography Gallery
+          </h2>
+          <div class="w-24 h-1 bg-primary mx-auto mb-6"></div>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            Capturing moments through my lens - a collection of my photography
+            work showcasing my passion for visual storytelling.
+          </p>
+        </div>
+
+        <!-- Gallery Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div
+            class="gallery-item group cursor-pointer"
+            onclick="openModal('./media/43.jpg')"
+          >
+            <div class="relative overflow-hidden rounded-lg shadow-lg">
+              <img
+                src="./media/43.jpg"
+                alt="Photography"
+                class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110"
+              />
+              <div
+                class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center"
+              >
+                <i
+                  class="fas fa-expand text-white text-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                ></i>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="gallery-item group cursor-pointer"
+            onclick="openModal('./media/IMG_20201208_071628-02.png')"
+          >
+            <div class="relative overflow-hidden rounded-lg shadow-lg">
+              <img
+                src="./media/IMG_20201208_071628-02.png"
+                alt="Photography"
+                class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110"
+              />
+              <div
+                class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center"
+              >
+                <i
+                  class="fas fa-expand text-white text-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                ></i>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="gallery-item group cursor-pointer"
+            onclick="openModal('./media/IMG_20210106_144938.png')"
+          >
+            <div class="relative overflow-hidden rounded-lg shadow-lg">
+              <img
+                src="./media/IMG_20210106_144938.png"
+                alt="Photography"
+                class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110"
+              />
+              <div
+                class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center"
+              >
+                <i
+                  class="fas fa-expand text-white text-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                ></i>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="gallery-item group cursor-pointer"
+            onclick="openModal('./media/IMG_20210122_073705.png')"
+          >
+            <div class="relative overflow-hidden rounded-lg shadow-lg">
+              <img
+                src="./media/IMG_20210122_073705.png"
+                alt="Photography"
+                class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110"
+              />
+              <div
+                class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center"
+              >
+                <i
+                  class="fas fa-expand text-white text-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                ></i>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="gallery-item group cursor-pointer"
+            onclick="openModal('./media/IMG_20210122_223333_449.png')"
+          >
+            <div class="relative overflow-hidden rounded-lg shadow-lg">
+              <img
+                src="./media/IMG_20210122_223333_449.png"
+                alt="Photography"
+                class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110"
+              />
+              <div
+                class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center"
+              >
+                <i
+                  class="fas fa-expand text-white text-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                ></i>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="gallery-item group cursor-pointer"
+            onclick="openModal('./media/photo_2023-02-22_10-52-56.jpg')"
+          >
+            <div class="relative overflow-hidden rounded-lg shadow-lg">
+              <img
+                src="./media/photo_2023-02-22_10-52-56.jpg"
+                alt="Photography"
+                class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110"
+              />
+              <div
+                class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center"
+              >
+                <i
+                  class="fas fa-expand text-white text-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                ></i>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="gallery-item group cursor-pointer"
+            onclick="openModal('./media/photo_2023-02-22_10-21-50.png')"
+          >
+            <div class="relative overflow-hidden rounded-lg shadow-lg">
+              <img
+                src="./media/photo_2023-02-22_10-21-50.png"
+                alt="Photography"
+                class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110"
+              />
+              <div
+                class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center"
+              >
+                <i
+                  class="fas fa-expand text-white text-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                ></i>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="gallery-item group cursor-pointer"
+            onclick="openModal('./media/photo_2023-02-22_10-21-48.png')"
+          >
+            <div class="relative overflow-hidden rounded-lg shadow-lg">
+              <img
+                src="./media/photo_2023-02-22_10-21-48.png"
+                alt="Photography"
+                class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110"
+              />
+              <div
+                class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center"
+              >
+                <i
+                  class="fas fa-expand text-white text-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                ></i>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="gallery-item group cursor-pointer"
+            onclick="openModal('./media/IMG_20210129_065901.png')"
+          >
+            <div class="relative overflow-hidden rounded-lg shadow-lg">
+              <img
+                src="./media/IMG_20210129_065901.png"
+                alt="Photography"
+                class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110"
+              />
+              <div
+                class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center"
+              >
+                <i
+                  class="fas fa-expand text-white text-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                ></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal for full-size images -->
+      <div
+        id="imageModal"
+        class="fixed inset-0 bg-black bg-opacity-90 z-50 hidden flex items-center justify-center p-4"
+      >
+        <div class="relative max-w-4xl max-h-full">
+          <img
+            id="modalImage"
+            src=""
+            alt="Full size image"
+            class="max-w-full max-h-full object-contain"
+          />
+          <button
+            onclick="closeModal()"
+            class="absolute top-4 right-4 text-white text-3xl hover:text-gray-300 transition-colors"
+          >
+            <i class="fas fa-times"></i>
+          </button>
+          <button
+            onclick="prevImage()"
+            class="absolute left-4 top-1/2 transform -translate-y-1/2 text-white text-3xl hover:text-gray-300 transition-colors"
+          >
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <button
+            onclick="nextImage()"
+            class="absolute right-4 top-1/2 transform -translate-y-1/2 text-white text-3xl hover:text-gray-300 transition-colors"
+          >
+            <i class="fas fa-chevron-right"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Main Footer Content -->
+        <div class="py-16">
+          <div class="grid lg:grid-cols-4 md:grid-cols-2 gap-8">
+            
+            <!-- Brand & Collaboration -->
+            <div class="lg:col-span-2 space-y-6">
+              <div>
+                <h3 class="text-3xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent mb-4">
+                  Utkarsh Uttam
+                </h3>
+                <p class="text-gray-300 text-lg leading-relaxed max-w-lg mb-6">
+                  Frontend/Fullstack Developer passionate about creating innovative solutions and exceptional user experiences with modern technologies.
+                </p>
+                
+                <!-- Collaboration Message -->
+                <div class="bg-gradient-to-r from-primary/10 to-accent/10 border border-primary/20 rounded-lg p-6 mb-6">
+                  <h4 class="text-xl font-semibold text-white mb-3 flex items-center">
+                    <i class="fas fa-handshake text-accent mr-3"></i>
+                    Let's Collaborate!
+                  </h4>
+                  <p class="text-gray-300 leading-relaxed mb-4">
+                    Have a project in mind or want to collaborate? I'm always open to discussing new opportunities, creative projects, or just having a friendly chat about technology and development.
+                  </p>
+                  <a 
+                    href="mailto:utkarshuttam2044@gmail.com" 
+                    class="inline-flex items-center px-6 py-3 bg-primary hover:bg-secondary text-white rounded-lg font-medium transition-all duration-300 transform hover:scale-105"
+                  >
+                    <i class="fas fa-envelope mr-2"></i>
+                    Get In Touch
+                  </a>
+                </div>
+              </div>
+              
+              <!-- Social Links -->
+              <div>
+                <h4 class="text-lg font-semibold mb-4 text-white">Connect With Me</h4>
+                <div class="flex space-x-4">
+                  <a
+                    href="https://www.linkedin.com/in/utkarsh-uttam-0884ab1b7/"
+                    target="_blank"
+                    class="group w-12 h-12 bg-gray-700 hover:bg-blue-600 rounded-lg flex items-center justify-center transition-all duration-300 transform hover:scale-110"
+                  >
+                    <i class="fab fa-linkedin text-xl group-hover:text-white"></i>
+                  </a>
+                  <a
+                    href="https://github.com/UtkarshUttam"
+                    target="_blank"
+                    class="group w-12 h-12 bg-gray-700 hover:bg-gray-600 rounded-lg flex items-center justify-center transition-all duration-300 transform hover:scale-110"
+                  >
+                    <i class="fab fa-github text-xl group-hover:text-white"></i>
+                  </a>
+                  <a
+                    href="https://www.facebook.com/utkarsh.uttam.56"
+                    target="_blank"
+                    class="group w-12 h-12 bg-gray-700 hover:bg-blue-500 rounded-lg flex items-center justify-center transition-all duration-300 transform hover:scale-110"
+                  >
+                    <i class="fab fa-facebook text-xl group-hover:text-white"></i>
+                  </a>
+                  <a
+                    href="https://www.instagram.com/utkarshuttam_3/"
+                    target="_blank"
+                    class="group w-12 h-12 bg-gray-700 hover:bg-pink-600 rounded-lg flex items-center justify-center transition-all duration-300 transform hover:scale-110"
+                  >
+                    <i class="fab fa-instagram text-xl group-hover:text-white"></i>
+                  </a>
+                  <a
+                    href="https://twitter.com/UTKARSHUTTAM_3"
+                    target="_blank"
+                    class="group w-12 h-12 bg-gray-700 hover:bg-blue-400 rounded-lg flex items-center justify-center transition-all duration-300 transform hover:scale-110"
+                  >
+                    <i class="fab fa-twitter text-xl group-hover:text-white"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Sitemap -->
+            <div class="space-y-6">
+              <h4 class="text-lg font-semibold text-white flex items-center">
+                <i class="fas fa-sitemap text-accent mr-2"></i>
+                Sitemap
+              </h4>
+              <div class="grid grid-cols-1 gap-3">
+                <!-- Main Pages -->
+                <div>
+                  <h5 class="text-sm font-medium text-gray-400 mb-2 uppercase tracking-wide">Main Pages</h5>
+                  <div class="space-y-2">
+                    <a
+                      href="#home"
+                      class="block text-gray-300 hover:text-primary transition-colors duration-300 hover:translate-x-1 transform text-sm"
+                      >Home</a
+                    >
+                    <a
+                      href="#about"
+                      class="block text-gray-300 hover:text-primary transition-colors duration-300 hover:translate-x-1 transform text-sm"
+                      >About Me</a
+                    >
+                    <a
+                      href="#skills"
+                      class="block text-gray-300 hover:text-primary transition-colors duration-300 hover:translate-x-1 transform text-sm"
+                      >Skills & Technologies</a
+                    >
+                  </div>
+                </div>
+                
+                <!-- Portfolio -->
+                <div>
+                  <h5 class="text-sm font-medium text-gray-400 mb-2 uppercase tracking-wide">Portfolio</h5>
+                  <div class="space-y-2">
+                    <a
+                      href="#projects"
+                      class="block text-gray-300 hover:text-primary transition-colors duration-300 hover:translate-x-1 transform text-sm"
+                      >Featured Projects</a
+                    >
+                    <a
+                      href="#gallery"
+                      class="block text-gray-300 hover:text-primary transition-colors duration-300 hover:translate-x-1 transform text-sm"
+                      >Photography Gallery</a
+                    >
+                    <a
+                      href="./resume/resume.html"
+                      class="block text-gray-300 hover:text-primary transition-colors duration-300 hover:translate-x-1 transform text-sm"
+                      >Resume</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="space-y-6">
+              <h4 class="text-lg font-semibold text-white flex items-center">
+                <i class="fas fa-address-card text-accent mr-2"></i>
+                Contact Info
+              </h4>
+              <div class="space-y-4">
+                <div class="flex items-start space-x-3">
+                  <div class="w-6 h-6 bg-primary rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                    <i class="fas fa-map-marker-alt text-white text-xs"></i>
+                  </div>
+                  <div>
+                    <p class="text-gray-300 text-sm">Vadodara/Bhopal, India</p>
+                  </div>
+                </div>
+                
+                <div class="flex items-start space-x-3">
+                  <div class="w-6 h-6 bg-primary rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                    <i class="fas fa-envelope text-white text-xs"></i>
+                  </div>
+                  <div>
+                    <a href="mailto:utkarshuttam2044@gmail.com" class="text-gray-300 hover:text-primary transition-colors text-sm">
+                      utkarshuttam2044@gmail.com
+                    </a>
+                  </div>
+                </div>
+                
+                <div class="flex items-start space-x-3">
+                  <div class="w-6 h-6 bg-primary rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                    <i class="fas fa-phone text-white text-xs"></i>
+                  </div>
+                  <div>
+                    <p class="text-gray-300 text-sm">+91 6352-412-745</p>
+                  </div>
+                </div>
+                
+                <!-- Professional Links -->
+                <div class="pt-4 border-t border-gray-700">
+                  <h5 class="text-sm font-medium text-gray-400 mb-3 uppercase tracking-wide">Professional</h5>
+                  <div class="space-y-2">
+                    <a
+                      href="https://github.com/UtkarshUttam"
+                      target="_blank"
+                      class="flex items-center text-gray-300 hover:text-primary transition-colors text-sm"
+                    >
+                      <i class="fab fa-github mr-2 text-xs"></i>
+                      GitHub Profile
+                    </a>
+                    <a
+                      href="https://www.linkedin.com/in/utkarsh-uttam-0884ab1b7/"
+                      target="_blank"
+                      class="flex items-center text-gray-300 hover:text-primary transition-colors text-sm"
+                    >
+                      <i class="fab fa-linkedin mr-2 text-xs"></i>
+                      LinkedIn Profile
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom Bar -->
+        <div class="border-t border-gray-700 py-8">
+          <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+            <div class="flex items-center space-x-2">
+              <p class="text-gray-400 text-sm">
+                © 2025 Utkarsh Uttam. All rights reserved.
+              </p>
+            </div>
+            
+            <div class="flex items-center space-x-6">
+              <p class="text-gray-400 text-sm flex items-center">
+                Built with 
+                <span class="text-red-500 mx-1">❤️</span>
+                and 
+                <span class="text-accent ml-1 font-medium">Tailwind CSS</span>
+              </p>
+              
+              <div class="flex items-center space-x-4">
+                <a href="./resume/resume.html" class="text-gray-400 hover:text-primary transition-colors text-sm">
+                  Resume
+                </a>
+                <span class="text-gray-600">•</span>
+                <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="text-gray-400 hover:text-primary transition-colors text-sm">
+                  Back to Top
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
 </html>

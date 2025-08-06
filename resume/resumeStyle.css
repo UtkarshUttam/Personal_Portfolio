@@ -1,133 +1,206 @@
-body{
-    background-color: #323232;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-}
-.container{
-    background: rgb(255, 255, 255);
-    width: 900px;
-    height:fit-content;
-    text-align:center;
-    margin: auto;
-    margin-top: 50px;
-    padding: 4%;
-    box-shadow: 10px 10px 5px #0b5ed7;
-}
+/* Modern Resume Styles */
 
-.profileArea{
-    /* background-color: rgb(255, 56, 56); */
-    height: 200px;
-    width: 200px;
-    position: relative;
-    float:left;
-}
-
-.profileArea img{
-    height:80%;
-    object-fit: contain;
-    width:100%;
-}
-
-.NameArea{
-    font-size: 30px;
-    font-weight: 600;
-}
-
-.contact{
-    /* background-color: yellow; */
-    position: relative;
-    float: right;
-    width:400px;
-    text-align: right;
-    
-}
-
-.section1{
-    display:flex;
-    width:900px;
-    /* background-color:rgb(244, 196, 4); */
-    justify-content:space-between;
-}
-
-.section2{
-    /* background-color: yellowgreen; */
-    height: 150px;
-    text-align: left;
-}
-
-.section3{
-    /* background-color: blanchedalmond; */
-    height: 200px;
-}
-
-th:nth-child(1),td:nth-child(1){
-    background-color: #d9d9d9;
-}
-
-table, th, td {
-    margin-top: 20px;
-    border: 2px solid #bfbfbf;
-    border-collapse: collapse;
-    padding: 10px 20px;
-    text-align: left;
-    width: -webkit-fill-available;
-    
+/* Print styles for better printing */
+@media print {
+  .print\\:hidden {
+    display: none !important;
   }
-
-
-.projectTable li::before{
-    content: "- ";
-    
+  
+  body {
+    background: white !important;
+    -webkit-print-color-adjust: exact;
+    color-adjust: exact;
+  }
+  
+  .bg-gradient-to-r {
+    background: #3b82f6 !important;
+    -webkit-print-color-adjust: exact;
+  }
+  
+  .shadow-2xl {
+    box-shadow: none !important;
+  }
+  
+  .rounded-lg {
+    border-radius: 0 !important;
+  }
+  
+  /* Ensure proper page breaks */
+  .page-break {
+    page-break-before: always;
+  }
+  
+  /* Adjust margins for print */
+  .max-w-4xl {
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  
+  .pt-20 {
+    padding-top: 0 !important;
+  }
+  
+  .pb-12 {
+    padding-bottom: 0 !important;
+  }
 }
 
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
 
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
 
+::-webkit-scrollbar-thumb {
+  background: #3b82f6;
+  border-radius: 4px;
+}
 
-nav {
-    background-color: #333;
-    color: #fff;
-    padding: 10px;
-    position: fixed;
+::-webkit-scrollbar-thumb:hover {
+  background: #1e40af;
+}
+
+/* Dark mode scrollbar */
+.dark ::-webkit-scrollbar-track {
+  background: #374151;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #3b82f6;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #1e40af;
+}
+
+/* Smooth transitions */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Custom animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out;
+}
+
+/* Hover effects */
+.hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Focus styles for accessibility */
+button:focus,
+a:focus {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+/* Custom gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #3b82f6, #06b6d4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Section dividers */
+.section-divider {
+  position: relative;
+}
+
+.section-divider::after {
+  content: '';
+  position: absolute;
+  bottom: -1rem;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(to right, transparent, #e5e7eb, transparent);
+}
+
+.dark .section-divider::after {
+  background: linear-gradient(to right, transparent, #374151, transparent);
+}
+
+/* Skill tags animation */
+.skill-tag {
+  transition: all 0.3s ease;
+}
+
+.skill-tag:hover {
+  transform: scale(1.05);
+}
+
+/* Timeline styles */
+.timeline-item {
+  position: relative;
+  padding-left: 2rem;
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.5rem;
+  width: 0.75rem;
+  height: 0.75rem;
+  background: #3b82f6;
+  border-radius: 50%;
+  border: 2px solid white;
+  box-shadow: 0 0 0 2px #3b82f6;
+}
+
+/* Mobile responsiveness improvements */
+@media (max-width: 768px) {
+  .mobile-stack {
+    flex-direction: column;
+  }
+  
+  .mobile-center {
+    text-align: center;
+  }
+  
+  .mobile-full {
     width: 100%;
-    top: 0;
-    z-index: 1000;
+  }
 }
 
-nav a {
-    color: #fff;
-    text-decoration: none;
-    margin: 0 10px;
-    padding: 5px 10px;
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .text-gray-600 {
+    color: #000 !important;
+  }
+  
+  .dark .text-gray-300 {
+    color: #fff !important;
+  }
 }
 
-nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-}
-
-nav li {
-    display: inline;
-}
-
-nav li.dropdown {
-    position: relative;
-}
-
-nav ul.dropdown-menu {
-    display: none;
-    position: absolute;
-    background-color: #333;
-    border: 1px solid #fff;
-    padding: 10px;
-    z-index: 1001;
-}
-
-nav li.dropdown:hover ul.dropdown-menu {
-    display: block;
-}
-
-hr.dropdown-divider {
-    border-top: 1px solid #fff;
-    margin: 5px 0;
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

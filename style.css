@@ -1,116 +1,152 @@
-body{
-    margin:0;
-}
-.first-section {
-    background: linear-gradient(rgba(0, 0, 0, 0.9),
-            rgba(0, 149, 255, 0.4)), url("./media/a7237d00f85945d0e54029e0fed47112.jpg");
-    background-size:cover;
-    height: 100vh;
-}
-.user-image{
-    margin: 150px;
-    height: 300px;
-    width: 300px;
-    vertical-align:middle;
-    object-fit:cover;
-    border-radius: 50%;
-    border-width: 100px;
-}
-/* .active {
-    background-color: rgb(65, 105, 225);
-    border-radius: 10px;
-} */
+/* Custom styles to complement Tailwind CSS */
 
-.hero-title{
-    /* padding-top: 300px; */
-    margin-top: 200px;
-    color: royalblue;
-    /* color: white; */
+/* Smooth scrolling for the entire page */
+html {
+    scroll-behavior: smooth;
 }
 
-.second-section{
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.8);
-    color: rgb(65, 105, 225);
-}
-.third-section{
-    height: 100vh;
-    background-color: #212529;
-    color: #fff;
-}
-.fourth-section{
-    background-color: rgb(241, 243, 255);
-    height: 150vh;
-}
-.fifth-section{
-    background-color: aliceblue;
-    height: 170vh;
-}
-.sixth-section{
-    background-color: whitesmoke;
-    height: 100vh;
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
 }
 
-.headings{
-    padding-top: 50px;
-    font-size:70px;
-}
-.footer{
-    background-color: rgb(74, 74, 74);
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
 }
 
-
-.contact{
-    padding: 4%;
-    height: 400px;
-}
-.col-md-3{
-    background: rgb(65, 105, 225);
-    color: #fff;
-    padding: 4%;
-    border-top-left-radius: 0.5rem;
-    border-bottom-left-radius: 0.5rem;
-}
-.contact-info{
-    margin-top:10%;
-}
-.contact-info img{
-    margin-bottom: 15%;
-}
-.contact-info h2{
-    margin-bottom: 10%;
-}
-.col-md-9{
-    background: #fff;
-    padding: 3%;
-    border-top-right-radius: 0.5rem;
-    border-bottom-right-radius: 0.5rem;
-}
-.contact-form label{
-    font-weight:600;
-}
-.contact-form button{
-    background: #25274d;
-    color: #fff;
-    font-weight: 600;
-    width: 25%;
-}
-.contact-form button:focus{
-    box-shadow:none;
+::-webkit-scrollbar-thumb {
+    background: #3b82f6;
+    border-radius: 4px;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
-.footer-text{
-    font-family: 'Courgette', cursive;
+::-webkit-scrollbar-thumb:hover {
+    background: #1e40af;
 }
 
-
-.footer{
-    background: rgb(26 34 58);
-    color:white;
+/* Navigation backdrop blur fallback */
+.nav-backdrop {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 }
+
+/* Gallery modal backdrop */
+#imageModal {
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+/* Skill progress bars animation */
+.skill-item .bg-cyan-400,
+.skill-item .bg-orange-500,
+.skill-item .bg-blue-500,
+.skill-item .bg-yellow-400,
+.skill-item .bg-blue-400,
+.skill-item .bg-green-500,
+.skill-item .bg-gray-300,
+.skill-item .bg-blue-600,
+.skill-item .bg-purple-500,
+.skill-item .bg-orange-600,
+.skill-item .bg-green-400,
+.skill-item .bg-indigo-400,
+.skill-item .bg-red-500 {
+    transition: width 1.5s ease-in-out;
+}
+
+/* Hover effects for cards */
+.hover-lift {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Loading animation for images */
+img {
+    transition: opacity 0.3s ease;
+}
+
+/* Focus styles for accessibility */
+button:focus,
+input:focus,
+textarea:focus,
+a:focus {
+    outline: 2px solid #3b82f6;
+    outline-offset: 2px;
+}
+
+/* Print styles */
+@media print {
+    .no-print {
+        display: none !important;
+    }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .text-gray-600 {
+        color: #000 !important;
+    }
     
+    .text-gray-300 {
+        color: #fff !important;
+    }
+}
 
-.nameArea{
-    display: flex;
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    html {
+        scroll-behavior: auto;
+    }
+}
+
+/* Dark mode specific styles */
+.dark {
+    color-scheme: dark;
+}
+
+/* Dark mode scrollbar */
+.dark ::-webkit-scrollbar-track {
+    background: #374151;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+    background: #3b82f6;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+    background: #1e40af;
+}
+
+/* Theme toggle button animation */
+#theme-toggle, #mobile-theme-toggle {
+    transition: all 0.3s ease;
+}
+
+#theme-toggle:hover, #mobile-theme-toggle:hover {
+    transform: scale(1.05);
+}
+
+/* Dark mode card backgrounds */
+.dark .bg-white {
+    background-color: rgb(31 41 55) !important;
+}
+
+.dark .text-gray-900 {
+    color: rgb(243 244 246) !important;
+}
+
+.dark .text-gray-600 {
+    color: rgb(156 163 175) !important;
+}
+
+.dark .bg-gray-50 {
+    background-color: rgb(17 24 39) !important;
 }
